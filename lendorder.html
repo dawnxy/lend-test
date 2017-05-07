@@ -10,7 +10,7 @@
     <style>
         *{ margin:0; padding:0;}
         body{ position: relative; font:0.28rem "微软雅黑";}
-        input{ border:none; outline:none; font-size: 100%; padding:0; line-height:normal;}
+        input{ border:none; outline:none; font-size: 0.3rem;}
         *{ -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color: transparent; /* For some Androids */ }
         a{-webkit-tap-highlight-color:rgba(255,255,255,0);}
         ::-webkit-input-placeholder { /* WebKit browsers */ color:#999;font-family:"微软雅黑";}
@@ -81,9 +81,7 @@
     <div class="input_box">
         <div class="input_line">
             <label><span>*</span>借款金额</label>
-            <div>
-                <input type="tel" placeholder="最少50，最多5000" name="loanTotal" id="loanTotal" autocomplete="off" value="500"/>
-            </div>
+            <input type="tel" placeholder="最少50，最多5000" name="loanTotal" id="loanTotal" autocomplete="off"/>
             <span class="r_sp">万元</span>
         </div>
         <div class="input_line select_line">
