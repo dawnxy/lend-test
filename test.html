@@ -5,20 +5,25 @@
     <meta http-equiv="content-Type" content="text/html;charset=utf-8">
     <title>文本框输入控制</title>
     <style>
-        input{ text-align: right;}
+        *{ margin: 0; padding:0;}
+        ul,li{ list-style: none;}
+        .num_box{ width:80%; margin:20px auto; font-size: 14px;}
+        .num_box input{ width:100%; height:30px; line-height: 30px; outline: none; padding:0 10px; -webkit-box-sizing: border-box; text-align: right; margin:10px auto;}
     </style>
 </head>
 <body>
-<ul>
-    <li>文本框得到焦点时，调用数字键盘</li>
-    <li>只能输入数字和小数点，不能输入其他特殊字符</li>
-    <li>第一位不能为小数点</li>
-    <li>只能有一个小数点</li>
-    <li>输入两位以上的整数时，第一位不能为0(如果输入03，则转换为3)</li>
-    <li>保留两位小数</li>
-    <li>用户修改时，重新定位光标位置</li>
-</ul>
-<input oninput="onlyNumber(this)" type="number" onblur="changeType(this)" onkeyup="this.value = this.value.replace(/[^\d\.]/g,'');"/>
+<div class="num_box">
+    <ul>
+        <li>1、文本框得到焦点时，调用数字键盘</li>
+        <li>2、只能输入数字和小数点，不能输入其他特殊字符</li>
+        <li>3、第一位不能为小数点</li>
+        <li>4、只能有一个小数点</li>
+        <li>5、输入两位以上的整数时，第一位不能为0(如果输入03，则转换为3)</li>
+        <li>6、保留两位小数</li>
+        <li>7、用户修改时，重新定位光标位置</li>
+    </ul>
+    <input oninput="onlyNumber(this)" type="number" onblur="changeType(this)" onkeyup="this.value = this.value.replace(/[^\d\.]/g,'');"/>
+</div>
 <script language="JavaScript" >
     var flag=true;
     function onlyNumber(obj){
@@ -36,10 +41,10 @@
         });
 
         if(flag){
-            n=n+1;
-            flag=false;
-        }
-        setCaretPosition(obj, n);//设置光标位置
+         n=n+1;
+         flag=false;
+         }
+         setCaretPosition(obj, n);//设置光标位置
     }
     //改变文本框的类型
     function changeType(obj){
