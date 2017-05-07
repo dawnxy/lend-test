@@ -15,13 +15,12 @@
     <li>保留两位小数</li>
     <li>用户修改时，重新定位光标位置</li>
 </ul>
-<input oninput="onlyNumber(this)" onfocus="changeType(this)" />
+<input oninput="onlyNumber(this)" />
 <script language="JavaScript" >
     var flag=true;
-    var n=0;
     function onlyNumber(obj){
         obj.type="text";//得到焦点时，文本框变为'text'类型，以便控制输入
-        n=getCursortPosition(obj);//获取光标位置
+        var n=getCursortPosition(obj);//获取光标位置
         obj.value = obj.value.replace(/[^\d\.]/g,'');//先把非数字的都替换掉，除了数字和.
         obj.value = obj.value.replace(/^\./g,''); //必须保证第一个为数字而不是.
         obj.value = obj.value.replace(/\.{2,}/g,'.');//保证只有出现一个.而没有多个.
@@ -41,7 +40,10 @@
         setCaretPosition(obj, n);//设置光标位置
     }
     //改变文本框的类型
-   
+    /*function changeType(obj){
+        n=getCursortPosition(obj);//获取光标位置
+        //obj.type="number";
+    }*/
     //获取光标位置
     function getCursortPosition (ctrl) {
         var CaretPos = 0;   // IE Support
