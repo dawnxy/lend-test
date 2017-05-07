@@ -89,6 +89,8 @@
 .input_line input {
   font-family: "微软雅黑";
   text-align: right;
+  height: .4rem;
+  line-height: .4rem;
 }
 .input_line div {
   -webkit-box-flex: 1;
