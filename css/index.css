@@ -75,7 +75,6 @@
 .input_line {
   display: -webkit-box;
   height: 0.4rem;
-  line-height: 0.4rem;
   border-bottom: 1px solid #e7e7e7;
   color: #4d4d4d;
   font-size: .3rem;
