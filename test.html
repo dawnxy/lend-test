@@ -5,10 +5,7 @@
     <meta http-equiv="content-Type" content="text/html;charset=utf-8">
     <title>文本框输入控制</title>
     <style>
-        *{ margin: 0; padding:0;}
-        ul,li{ list-style: none;}
-        .num_box{ width:80%; margin:20px auto; font-size: 14px;}
-        .num_box input{ width:100%; height:30px; line-height: 30px; outline: none; padding:0 10px; -webkit-box-sizing: border-box; text-align: right; margin:10px auto;}
+        input{ text-align: right;}
     </style>
 </head>
 <body>
@@ -29,7 +26,7 @@
     function onlyNumber(obj){
         obj.type="text";//得到焦点时，文本框变为'text'类型，以便控制输入
         var n=getCursortPosition(obj);//获取光标位置
-        //obj.value = obj.value.replace(/[^\d\.]/g,'');//先把非数字的都替换掉，除了数字和.
+        obj.value = obj.value.replace(/[^\d\.]/g,'');//先把非数字的都替换掉，除了数字和.
         obj.value = obj.value.replace(/^\./g,''); //必须保证第一个为数字而不是.
         obj.value = obj.value.replace(/\.{2,}/g,'.');//保证只有出现一个.而没有多个.
         obj.value = obj.value.replace('.','$#$').replace(/\./g,'').replace('$#$','.');//保证.只出现一次，而不能出现两次以上
@@ -41,10 +38,10 @@
         });
 
         if(flag){
-         n=n+1;
-         flag=false;
-         }
-         setCaretPosition(obj, n);//设置光标位置
+            n=n+1;
+            flag=false;
+        }
+        setCaretPosition(obj, n);//设置光标位置
     }
     //改变文本框的类型
     function changeType(obj){
