@@ -30,11 +30,11 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="521">
+              <caret line="38" column="43" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="38" selection-end-column="43" />
               <folding>
-                <element signature="e#1517#1959#0" expanded="false" />
-                <element signature="e#2013#2399#0" expanded="false" />
+                <element signature="e#1522#1964#0" expanded="false" />
+                <element signature="e#2018#2404#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -272,12 +272,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494133762396</updated>
-      <workItem from="1494133765630" duration="26498000" />
+      <workItem from="1494133765630" duration="26662000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26498000" />
+    <option name="totallyTimeSpent" value="26662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -370,11 +370,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        <state relative-caret-position="521">
+          <caret line="38" column="43" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="38" selection-end-column="43" />
           <folding>
-            <element signature="e#1517#1959#0" expanded="false" />
-            <element signature="e#2013#2399#0" expanded="false" />
+            <element signature="e#1522#1964#0" expanded="false" />
+            <element signature="e#2018#2404#0" expanded="false" />
           </folding>
         </state>
       </provider>
