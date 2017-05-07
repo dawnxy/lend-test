@@ -73,9 +73,7 @@
   background: #fff;
 }
 .input_line {
-  display: -webkit-flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
+  display: -webkit-box;
   height: 0.4rem;
   line-height: 0.4rem;
   border-bottom: 1px solid #e7e7e7;
@@ -99,6 +97,7 @@
   line-height: 0.4rem;
   text-align: right;
   color: #4d4d4d;
+  padding: 0;
 }
 .input_line .r_sp {
   display: inline-block;
