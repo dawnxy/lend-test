@@ -1,0 +1,801 @@
+/*reset.css*/
+/* 借款app-知识专区    */
+.bg_f0 {
+  background: #f0f0f0;
+}
+.knowl_part img {
+  width: 100%;
+  display: block;
+}
+.knowl_txt {
+  padding-top: 0.2rem;
+}
+.txt_line {
+  padding: 0.26rem 0.3rem 0.27rem;
+  background: #fff;
+  margin-bottom: 0.2rem;
+}
+.txt_line h3 {
+  font-size: 0.3rem;
+  color: #4d4d4d;
+  line-height: 0.5rem;
+  padding-bottom: 0.13rem;
+}
+.txt_line p {
+  font-size: 0.26rem;
+  color: #8c8c8c;
+  line-height: 0.38rem;
+}
+/*   借款端新手指南      */
+.loanxinshou {
+  width: 100%;
+  background: #fff1c9;
+}
+.loanxinshou h3 {
+  width: 62%;
+  margin: 40px auto 0 auto;
+  color: #1480dc;
+  font-size: 16px;
+  /*font-family: PingFangSC-Regular, sans-serif;*/
+}
+.loanxinshou h3 em {
+  display: inline-block;
+  width: 30%;
+  height: 1px;
+  background: #1480dc;
+  vertical-align: 5px;
+}
+.loanxinshou h3 span {
+  margin: 0 3%;
+}
+.xinshoubtn {
+  width: 100%;
+  height: 50px;
+  background: #359df5;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+}
+.loanxinshou h3.xinshoutit em {
+  width: 22%;
+}
+@media screen and (min-width: 375px) {
+  .loanxinshou h3 em {
+    width: 33%;
+  }
+  .loanxinshou h3.xinshoutit em {
+    width: 26%;
+  }
+}
+/*  房贷计算器  */
+.loanForm {
+  background: #fff;
+}
+.input_line {
+  display: -webkit-box;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  border-bottom: 1px solid #e7e7e7;
+  color: #4d4d4d;
+  font-size: .3rem;
+  padding: 0.3rem 0.37rem 0.3rem 0;
+  margin: 0 0.3rem;
+}
+.input_line label {
+  width: 2rem;
+  display: inline-block;
+}
+.input_line input {
+  font-family: "微软雅黑";
+}
+.input_line input,
+.input_line .showInput {
+  -webkit-box-flex: 1;
+  display: block;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: right;
+  color: #4d4d4d;
+}
+.input_line .r_sp {
+  display: inline-block;
+  width: 0.3rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: right;
+}
+.calc_btn {
+  padding: 0.4rem 0.4rem 0;
+  text-align: center;
+}
+.calc_btn input {
+  width: 100%;
+  height: 0.98rem;
+  color: #fff;
+  font-size: 0.32rem;
+  background: #359df5;
+  border-radius: 2px;
+}
+.txt_info1 {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.22rem;
+  color: #d0d2d3;
+  text-align: center;
+}
+.select_line {
+  padding-right: 0;
+}
+.select_line .arrow {
+  width: 0.37rem;
+  background: url("../images/select_arrow.png") no-repeat right center;
+  background-size: 0.15rem 0.28rem;
+}
+/*房贷计算器弹窗*/
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.pop_box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  width: 5.86rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  font-size: 0.32rem;
+}
+.pop_box p {
+  line-height: 0.52rem;
+  text-align: center;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+.pop_hint {
+  color: #666;
+  border-bottom: 1px solid #EAEAEA;
+  padding: 0.5rem 0;
+}
+.pop_sure {
+  padding: 0.32rem 0;
+}
+.pop_sure a {
+  color: #359df5;
+  font-size: 0.32rem;
+}
+/*计算结果*/
+.txt_res {
+  padding: 0 0.3rem;
+  margin: 0.2rem 0;
+  background: #fff;
+}
+.res_line {
+  display: -webkit-box;
+  font-size: 0.3rem;
+  height: 1.06rem;
+  line-height: 1.06rem;
+  border-bottom: 1px solid #e7e7e7;
+  color: #4d4d4d;
+}
+.res_line:last-child {
+  border-bottom: none;
+}
+.res_line label {
+  display: inline-block;
+  width: 1.6rem;
+  color: #a8a8a8;
+}
+.res_line span {
+  display: block;
+  -webkit-box-flex: 1;
+  color: #4d4d4d;
+  text-align: right;
+}
+.res_line i {
+  font-size: 0.24rem;
+  font-style: normal;
+  color: #8c8c8c;
+}
+.res_line i.decrease {
+  display: inline-block;
+  width: 2rem;
+  line-height: 0.4rem;
+  padding: 0.15rem 0 0 0.2rem;
+}
+.txt_info2 {
+  font-size: 0.22rem;
+  line-height: 0.42rem;
+  color: #828282;
+  text-align: center;
+  padding-bottom: 0.2rem;
+}
+.charts_res {
+  display: -webkit-box;
+  padding: 0.43rem 0.3rem;
+  background: #fff;
+}
+.res_circle {
+  margin-right: 0.2rem;
+}
+.res_num {
+  -webkit-box-flex: 1;
+  line-height: 30px;
+  font-size: 12px;
+  color: #737373;
+  padding-top: 12px;
+}
+.res_num p i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: 1px;
+}
+.res_num p:nth-child(1) i {
+  background: #00bcff;
+}
+.res_num p:nth-child(2) i {
+  background: #ff9f61;
+}
+.res_num p:nth-child(3) i {
+  background: #fde276;
+}
+/*借款端我的页面样式*/
+.zportrait {
+  padding: 0.3rem 0.3rem 0;
+  background: #359df5 url("../images/zlendbala.png") 0 3.85rem no-repeat;
+  background-size: 7.5rem 0.86rem;
+}
+.zportrait a {
+  font-size: 0.3rem;
+  color: #fff;
+}
+.zportrait a img {
+  width: 0.28rem;
+  height: 0.28rem;
+  margin-right: 0.12rem;
+}
+.zfport {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.9rem;
+  border: 0.08rem solid #4ea8f7;
+  margin-bottom: 0.1rem;
+}
+.zlendnadiv {
+  text-align: center;
+  font-size: 0.32rem;
+  color: #fff;
+  padding-bottom: 0.38rem;
+  border-bottom: 1px solid #5db1f7;
+}
+.zlendbala {
+  height: 1.04rem;
+  line-height: 1.04rem;
+  color: #fff;
+}
+.zlendbala img {
+  width: 0.18rem;
+  height: 0.3rem;
+  margin-bottom: -0.03rem;
+}
+.zlendbarimg {
+  float: right;
+  font-size: 0.3rem;
+}
+.zlenddiv {
+  background: #fff;
+  padding: 0.3rem;
+  height: 0.46rem;
+  line-height: 0.46rem;
+  border-bottom: 1px solid #e5e5e5;
+  color: #333;
+  font-size: 0.3rem;
+}
+.zlenddiv .zlendimgle {
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.3rem;
+  float: left;
+}
+.zlenddivri {
+  height: 0.45rem;
+  line-height: 0.45rem;
+}
+.zlendririg {
+  float: right;
+}
+.zlendririg img {
+  width: 0.18rem;
+  height: 0.3rem;
+  margin-bottom: -0.03rem;
+}
+.zlendririg span {
+  margin-right: 0.14rem;
+  color: #666;
+}
+.zlenddivmar {
+  margin-bottom: 0.2rem;
+}
+.zlenddivnobor {
+  border: 0;
+}
+.zlendtoti {
+  height: 1rem;
+  line-height: 1rem;
+}
+.zlendtoti div {
+  width: 3.1rem;
+  margin: 0 auto;
+}
+.zlendtoti div img {
+  width: 0.6rem;
+  margin-bottom: 0.11rem;
+  height: 0.02rem;
+}
+.zlendtoti div span {
+  margin: 0 0.15rem;
+}
+.zlenddivbomar {
+  margin-bottom: 0.8rem;
+}
+.zsignout {
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.32rem;
+  background: #359df5;
+}
+.zsignout a {
+  color: #fff;
+  display: block;
+}
+/*拨打管理人电话弹框*/
+.zlendbomb,
+.zlendbomb1 {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.zlendglr,
+.zlendts,
+.zlendapp {
+  background: #fff;
+  border-radius: 0.2rem;
+  width: 5.88rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -2.94rem;
+  margin-top: -2.22rem;
+}
+.zlenddhtop {
+  padding: 0 0.83rem;
+}
+.zlenddhtop h3 {
+  color: #999;
+  font-size: 0.26rem;
+  text-align: center;
+  font-weight: normal;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #eaeaea;
+}
+.zlendglrtell {
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+  padding: 0.48rem 0 0.6rem 0;
+  color: #666;
+}
+.zlrtell1 {
+  font-size: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.zlrtell2 {
+  font-size: 0.5rem;
+}
+.zlenddhtop h3 img,
+.zlendts h3 img {
+  width: 0.26rem;
+  height: 0.26rem;
+  margin-right: 0.2rem;
+  margin-bottom: -0.05rem;
+}
+.zlendtebtn {
+  height: 1rem;
+  line-height: 1rem;
+}
+.zlendtebtn a {
+  width: 2.94rem;
+  height: 1rem;
+  text-align: center;
+  font-size: 0.32rem;
+  color: #c2c2c2;
+  float: left;
+}
+.zlendboclose {
+  border-right: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+.zlendtebtn .zlendtebd {
+  color: #359df5;
+}
+/*我要投诉弹框*/
+.zlendbomb1 {
+  display: block;
+}
+.zlendts {
+  color: #666;
+  margin-top: -1.78rem;
+}
+.zlendts h3 {
+  color: #999;
+  font-size: 0.26rem;
+  text-align: center;
+  font-weight: normal;
+  padding: 0.6rem 0 0.4rem 0;
+}
+.zlendts .zlrtell2 {
+  text-align: center;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #eaeaea;
+}
+/*下载app弹框*/
+.zlendapp {
+  padding: 0.24rem;
+  box-sizing: border-box;
+  text-align: center;
+  color: #333;
+  font-size: 0.3rem;
+}
+.zlendapp img {
+  width: 0.28rem;
+  height: 0.28rem;
+  float: right;
+}
+.zlendapp p {
+  line-height: 0.56rem;
+  padding: 0.43rem 0;
+}
+.zlendappxz {
+  color: #fff;
+  width: 2.95rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  font-size: 0.32rem;
+  border-radius: 0.42rem;
+  background: #359df5;
+  display: block;
+  margin: 0 auto 0.4rem;
+}
+.zlendtolist .zlendhre {
+  color: #333;
+  font-size: 0.3rem;
+}
+/*我要反馈页面样式*/
+.zlendfkdiv {
+  padding-top: 0.2rem;
+}
+.zlendarea {
+  width: 100%;
+  height: 3.95rem;
+  background: #fff;
+  color: #999;
+  font-size: 0.26rem;
+  resize: none;
+  padding: 0.3rem 0.32rem;
+  outline: none;
+}
+.zlendfkdiv p {
+  color: #999;
+  font-size: 0.24rem;
+  margin: 0.2rem 0.32rem 0.48rem;
+  text-align: right;
+}
+.zlendsub {
+  margin: 0 0.32rem;
+  border-radius: 0.16rem;
+  height: 0.9rem;
+  line-height: 0.9rem;
+  text-align: center;
+  background: #359df5;
+  color: #fff;
+  font-size: 0.32rem;
+}
+#zlendDq {
+  height: 44px;
+  background: #359df5 url("../images/zlenddqjt.png") 58% center no-repeat;
+  background-size: 13px 8px;
+  line-height: 44px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+}
+/*  首页  */
+.loanContent {
+  background: #fff;
+  margin-top: 0.2rem;
+}
+.loanContent h3 {
+  font-weight: normal;
+  font-size: 0.3rem;
+  color: #333;
+  line-height: 0.8rem;
+  border-bottom: 1px solid #e5e5e5;
+  padding-left: 0.3rem;
+}
+.loanContent h3 img {
+  width: 0.64rem;
+  vertical-align: -6px;
+  margin-right: 0.2rem;
+}
+.loanContlist {
+  display: block;
+  margin: 0 0.3rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.loanContlist:last-child {
+  border-bottom: none;
+}
+.loanContnum {
+  width: 2.24rem;
+  border-right: 1px solid #e5e5e5;
+  padding: 0.2rem 0 0.14rem 0;
+}
+.loanContnum span {
+  font-size: 0.42rem;
+  color: #ff4c4c;
+}
+.loanContnum span em {
+  font-size: 0.6rem;
+  font-style: normal;
+}
+.loanContnum p {
+  margin-top: 0.1rem;
+  color: #999;
+  font-size: 0.22rem;
+}
+.loanConttxt {
+  width: 4.1rem;
+  padding: 0.2rem 0 0.14rem 0.4rem;
+}
+.loanConttxt h4 {
+  width: 4.1rem;
+  font-size: 0.3rem;
+  color: #666;
+  margin-bottom: 0.22rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.loanConttxt p span {
+  display: inline-block;
+  padding: 0.05rem 0.1rem;
+  background: #f7fbfb;
+  color: #3674b3;
+  font-size: 0.2rem;
+  border-radius: 15px;
+  border: 1px solid #3674b3;
+  margin-right: 0.1rem;
+}
+.loanContline {
+  width: 0.13rem;
+  margin-top: 0.5rem;
+}
+.onclick {
+  width: 72px;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 999;
+}
+/*借款端订单提交页*/
+.lendorderForm {
+  padding-bottom: 31px;
+}
+.photo_line {
+  border-bottom: none;
+}
+.photo_line label {
+  width: 5.9rem;
+}
+.photo_line label i {
+  font-size: .2rem;
+  font-style: normal;
+  color: #999;
+}
+.photo_add li {
+  float: left;
+  width: 2.1rem;
+  height: 2.1rem;
+  background: #f0eff5;
+  border-radius: 5px;
+  margin-left: 0.3rem;
+  margin-bottom: 0.3rem;
+  color: #999;
+  text-align: center;
+  overflow: hidden;
+}
+.photo_add li .addPhotoimg {
+  width: 2.1rem;
+  height: 1.7rem;
+  line-height: 1.7rem;
+  font-size: 0.6rem;
+}
+.photo_add li .addPhototxt {
+  height: 0.4rem;
+  line-height: 0.4rem;
+  background: #e9e9e9;
+  font-size: 0.22rem;
+}
+.photo_addbtn,
+.photo_removebtn {
+  width: 100%;
+  height: 1.06rem;
+  line-height: 1.06rem;
+  text-align: center;
+  color: #359df5;
+  background: #fff;
+  margin-bottom: 0.2rem;
+  font-size: 0.3rem;
+  border-bottom: .2rem solid #f3f3f3;
+}
+.photo_removebtn {
+  position: relative;
+  color: #ff7100;
+}
+.photo_addbtn span,
+.photo_removebtn span {
+  padding-right: 0.2rem;
+}
+.showSelectimg {
+  width: 0.2rem;
+  height: 0.2rem;
+  margin-right: 0.2rem;
+}
+.creditarea {
+  width: 6.65rem;
+  height: 2.1rem;
+  margin: 0 0.3rem;
+  padding: 0.1rem;
+  border: 1px solid #e5e5e5;
+  outline: none;
+  font-family: "微软雅黑";
+}
+.credittips {
+  text-align: right;
+  padding: 0.2rem 0.3rem;
+  color: #999;
+}
+.photo_removebtn i {
+  position: absolute;
+  top: 0.24rem;
+  left: 0.36rem;
+  display: inline-block;
+  width: 0.78rem;
+  padding-top: 0.13rem;
+  height: 0.31rem;
+  line-height: 0.31rem;
+  background: url("../images/num_bg.png");
+  -webkit-background-size: 100% 100%;
+  text-align: center;
+  font-size: 0.24rem;
+  color: #666;
+  font-style: normal;
+}
+.lendSuccess {
+  display: none;
+}
+.lendSucMess {
+  position: fixed;
+  left: 0.73rem;
+  top: 29%;
+  z-index: 1002;
+  width: 4.75rem;
+  background: #fff;
+  padding: 0.42rem 0.56rem;
+}
+.lendSucMesstop img {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0 auto;
+}
+.lendSucMesstop p {
+  padding: 0.45rem 0;
+  text-indent: 0.56rem;
+  line-height: 0.41rem;
+}
+.lendSucMessbtn {
+  width: 4.31rem;
+  height: 0.91rem;
+  line-height: 0.91rem;
+  text-align: center;
+  background: #359df5;
+  color: #fff;
+  margin: 0 auto;
+}
+.applyAssess {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.applyAssess input {
+  color: #fff;
+  display: inline-block;
+  background: #30c4de;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: "微软雅黑";
+  border: none;
+}
+.allmeng {
+  display: none;
+}
+.allmengs {
+  display: none;
+}
+.xtoast .mt-lottery p {
+  color: #ffffff;
+}
+.xtoast .mt-lottery {
+  background: url("../images/xmengt.png") no-repeat center center;
+}
+.mt-lottery {
+  color: #505050;
+  width: 80%;
+  position: fixed;
+  background: #fff;
+  z-index: 99999;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  margin-top: -25%;
+  margin-left: -42%;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px 2%;
+  line-height: 24px;
+}
+/*新增样式*/
+.bg_f3 {
+  background: #f3f3f3;
+}
+.clearfix:after {
+  display: block;
+  content: "";
+  font-size: 0;
+  line-height: 0;
+  clear: both;
+  overflow: hidden;
+}
+.delx {
+  width: .5rem;
+  height: .5rem;
+}
+.delx img {
+  width: 100%;
+  height: 100%;
+}
+.photo_removebtn {
+  border-top: .2rem solid #f3f3f3;
+  border-bottom: .2rem solid #f3f3f3;
+  margin-bottom: .2rem;
+}

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抵押借款</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/iosSelect.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        *{ margin:0; padding:0;}
+        body{ position: relative; font:0.28rem "微软雅黑";}
+        input{ border:none; outline:none; font-size: 0.3rem;}
+        *{ -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color: transparent; /* For some Androids */ }
+        a{-webkit-tap-highlight-color:rgba(255,255,255,0);}
+        ::-webkit-input-placeholder { /* WebKit browsers */ color:#999;font-family:"微软雅黑";}
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color:#999;font-family:"微软雅黑";}
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */ color:#999;font-family:"微软雅黑";}
+        :-ms-input-placeholder { /* Internet Explorer 10+ */color:#999;font-family:"微软雅黑";}
+
+        /* 样式重设 */
+        .input_box{margin-bottom:0.2rem;    border-top: 1px solid #e7e7e7; background: #fff;}
+        .input_line{padding-right:0.3rem;}
+        .select_line{padding-right:0.3rem;}
+        .input_line label{color:#000;}
+        .input_line label span{color:#ff0000;}
+        .input_line .r_sp{    width: 0.7rem;}
+        .select_line .arrow{ width: 0.37rem;}
+        .input_line input, .input_line .goodscolor{color:#999;}
+        .input_line input, .input_line .showSelect{color:#000;}
+        .input_line .showSelect{ -webkit-box-flex: 1; display: block; height: 0.4rem; line-height: 0.4rem; text-align: right; color: #4d4d4d;}
+        .applyAssess input{background: #359df6;}
+        .input_line .r_sps{width: 0.37rem;}
+        .photo_line .showInput{color:#359df5;}
+        /* 下拉选择框样式重设 */
+        .ios-select-widget-box.olay{ background:rgba(0,0,0,0.5);}
+        .ios-select-widget-box #iosSelectTitle{color:#4d4d4d;}
+        .ios-select-widget-box ul li { font-size:15px; text-align: center; padding: 0 20px; color:#4d4d4d; opacity:1;}
+        .ios-select-widget-box ul li.at { font-size: 15px; color:#359df5; opacity:1;}
+        .ios-select-widget-box ul li.side1{ font-size: 15px; color:#4d4d4d; opacity:1;}
+        .ios-select-widget-box header.iosselect-header a{ font-size:16px; color:#4d4d4d;}
+        .ios-select-widget-box header.iosselect-header a.close{ padding-left: 20px; color: #9c9fa1;}
+        .ios-select-widget-box header.iosselect-header a.sure{ padding-right: 20px;color: #359df5;}
+        .ios-select-widget-box .cover-area1 { border-top-color:#e7e7e7;}
+        .ios-select-widget-box .cover-area2 { border-top-color:#e7e7e7;}
+
+        /* 上传图片  */
+        #content{width:100%}
+        #content img.popimg{float:left;width:2.1rem;height:2.1rem;overflow:hidden}
+        .file{ float:left; margin-left:.3rem;/*margin-top:.3rem;*/ margin-bottom:.3rem;background:url(images/addimg.png) no-repeat;overflow:hidden;text-decoration:none;text-indent:0;width:2.1rem;background-size:2.1rem 2.1rem;height:2.1rem}
+        .file input{opacity:0;height:2.1rem;width:2.1rem}
+        .delx{position:absolute;right:-10px;top:-10px;display:none}
+        .imgbox{position:relative;width:2.1rem;height:2.1rem;margin-left:.3rem;/*margin-top:.3rem;*/ margin-bottom:.3rem; float:left}
+        .del{display:none;
+            color: #359df5;
+            -webkit-box-flex: 1;
+            height: 0.4rem;
+            line-height: 0.4rem;
+            text-align: right;}
+        #open,.hide{display:none}
+        #wai{
+            width:100%;
+            height:1px;
+            display:none;
+        }
+        #nei{
+            width:0px;
+            height:1px;
+            background:#359df6;
+        }
+
+    </style>
+    <script src="js/jquery.1.11.0.min.js"></script>
+    <script src="js/lendindex.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/iosSelect-2.0.js"></script>
+</head>
+
+<body class="bg_f3">
+<form class="lendorderForm">
+    <div class="input_box">
+        <div class="input_line">
+            <label><span>*</span>借款金额</label>
+            <input type="tel" placeholder="最少50，最多5000" name="loanTotal" id="loanTotal" autocomplete="off"/>
+            <span class="r_sp">万元</span>
+        </div>
+        <div class="input_line select_line">
+            <label><span>*</span>借款期限</label>
+            <input type="hidden" name="" id="loanTerm" value="">
+            <span class="showInput" data-name="Term"><span class="goodscolor">请选择借款期限</span></span>
+            <span class="r_sp arrow"></span>
+        </div>
+    </div>
+    <div class="input_box">
+        <div class="input_line select_line">
+            <label><span>*</span>所在城市</label>
+            <input type="hidden" name="" id="loanCity" value="">
+            <span class="showInput showCity" data-name="City"><span class="goodscolor">请选择房产所在城市</span></span>
+            <span class="r_sp arrow"></span>
+        </div>
+        <div class="input_line">
+            <label><span>*</span>借款人姓名</label>
+            <input type="text" placeholder="请输入借款人姓名" name="" id="loanName" autocomplete="off" maxlength="5"/>
+        </div>
+    </div>
+    <div class="input_box">
+
+        <div class="input_line select_line">
+            <label><span>*</span>申请渠道</label>
+            <input type="hidden" name="" id="loanChannel" value="">
+            <span class="showInput showApply" data-name="Channel" data-id=""><span class="goodscolor">请选择申请渠道</span></span>
+            <span class="r_sp arrow"></span>
+        </div>
+        <div class="input_line" style="display:none;" id="input_commission">
+            <label><span>*</span>期望佣金</label>
+            <input type="tel" placeholder="请合理填入，提高审核通过率" name="commission" id="commission" autocomplete="off" maxlength="3" />
+            <span class="r_sp r_sps">%</span>
+        </div>
+        <div class="input_line" style="display:none;" id="input_phone">
+            <label><span>*</span>借款人手机号</label>
+            <input type="tel" placeholder="请输入借款人手机号" name="" id="loanPhone" autocomplete="off" maxlength="11"/>
+        </div>
+
+    </div>
+    <div class="input_box input_house">
+        <div class="one_house">
+            <div class="input_line select_line">
+                <label>房本照片</label>
+                <span class="showSelect"><img class="showSelectimg" src="images/lend_selected.png" />有房本照片</span>
+            </div>
+
+            <!-- 有房本照片展示 start -->
+            <div class="selectPhoto2">
+                <div class="input_line select_line">
+                    <label><span>*</span>行政区县</label>
+                    <input type="hidden" name="" id="" class="houseCountry" value="">
+                    <span class="showInput showCountry" data-name="Area"><span class="goodscolor">请选择房产所在区域</span></span>
+                    <span class="r_sp arrow"></span>
+                </div>
+                <div class="input_line select_line">
+                    <label><span>*</span>抵押情况</label>
+                    <input type="hidden" name="" id="" class="housePledge" value="">
+                    <span class="showInput" data-name="Pledge"><span class="goodscolor">请选择房产抵押情况</span></span>
+                    <span class="r_sp arrow"></span>
+                </div>
+                <div class="input_line select_line">
+                    <label><span>*</span>产权人年龄</label>
+                    <input type="hidden" name="" id="" class="houseAge" value="">
+                    <span class="showInput" data-name="Age"><span class="goodscolor">请选择产权人年龄</span></span>
+                    <span class="r_sp arrow"></span>
+                </div>
+                <div class="input_line photo_line">
+                    <label><span>*</span>房本照片  <i>(照片需要包含房产位置、面积、性质等)</i></label><!-- (照片需要包含房产位置、面积、性质等) -->
+                    <span class="del">编辑</span>
+                </div>
+                <div id="wai"><div id="nei"></div></div>
+                <div class="photo_add">
+                    <div id="content" class="clearfix">
+                        <div class="photo_container file">
+                            <input id="file1" class="file1" name="file" accept=""  type="file" multiple="multiple" onchange="change(this);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 有房本照片展示 end -->
+            <!-- 无房本照片展示 start -->
+            <div class="selectPhoto1" style="display:none">
+                <div class="input_line select_line">
+                    <label><span>*</span>行政区县</label>
+                    <input type="hidden" name="" id="" class="houseCountry" value="">
+                    <span class="showInput showCountry" data-name="Area"><span class="goodscolor">请选择房产所在区域</span></span>
+                    <span class="r_sp arrow"></span>
+                </div>
+                <div class="input_line">
+                    <label><span>*</span>房产地址</label>
+                    <input type="text" placeholder="详细地址和小区名称均可" name="" id="" class="houseAddress" autocomplete="off"/>
+                </div>
+                <div class="input_line">
+                    <label><span>*</span>建筑面积</label>
+                    <input type="text" placeholder="请输入面积" name="" id="houseArea" class="houseArea" autocomplete="off"/>
+                    <span class="r_sp">平米</span>
+                </div>
+                <div class="input_line select_line">
+                    <label><span>*</span>房产种类</label>
+                    <input type="hidden" name="" id="" class="houseType" value="">
+                    <span class="showInput" data-name="Variety"><span class="goodscolor">请选择房产种类</span></span>
+                    <span class="r_sp arrow"></span>
+                </div>
+                <div class="input_line select_line">
+                    <label><span>*</span>抵押情况</label>
+                    <input type="hidden" name="" id="" class="housePledge" value="">
+                    <span class="showInput" data-name="Pledge"><span class="goodscolor">请选择房产抵押情况</span></span>
+                    <span class="r_sp arrow"></span>
+                </div>
+                <div class="input_line select_line">
+                    <label><span>*</span>产权人年龄</label>
+                    <input type="hidden" name="" id="" class="houseAge" value="">
+                    <span class="showInput" data-name="Age"><span class="goodscolor">请选择产权人年龄</span></span>
+                    <span class="r_sp arrow"></span>
+                </div>
+            </div>
+            <!-- 无房本照片展示 end -->
+        </div>
+    </div>
+    <div class="photo_addbtn"><span>+</span>添加房产</div>
+</form>
+<div class="applyAssess">
+    <input id="creditBtn" type="button" value="提交" />
+</div>
+<!-- toast提示 -->
+<div class="allmeng xtoast" id="toast" style="display:none;">
+    <div class="mt-lottery">
+        <p></p>
+    </div>
+</div>
+</body>
+<script src="js/loanSelectData.js"></script>
+<script>
+    var imgnum=0;
+    var arr=[];
+    var xnum=0;
+    var imgsSrc="";
+    //点击编辑完成按钮
+    $('.del').on('click',function(){
+        var myok = $(this).hasClass('ok');
+        if(myok){
+            $(this).html('编辑');
+            $(this).removeClass('ok');
+            $('.delx').hide();
+            $('.file input').attr("disabled",false);
+
+        }else{
+            $(this).html('完成');
+            $(this).addClass('ok');
+            $('.delx').show();
+            $('.file input').attr("disabled",true);
+        }
+
+    });
+    //点击删除事件
+    $("#content").on("click",".delx",function(){
+        var index = $(this).parent().index();
+        arr.splice(index,1);//删除放大图元素
+        imgnum--
+        var imglen = $('.imgbox').length;
+        if(imglen==1){
+            $('.del').removeClass('ok').hide();
+            $('.del').html('编辑');
+            $('.file input').attr("disabled",false);
+        }
+
+        $('.photo_container').show();//有删除就出现新增图片按钮
+        $(this).parent().remove();
+    })
+    //添加图片事件
+    window.onload = function(){
+        var input = document.getElementById("file1");
+        var result,div,openimg;
+        if(typeof FileReader==='undefined'){
+            result.innerHTML = "抱歉，你的浏览器不支持 FileReader";
+            input.setAttribute('disabled','disabled');
+        }else{
+            input.addEventListener('change',readFile,false);
+        }
+        function readFile(){
+            $('.del').show();
+            $(this).html('编辑');
+            for(var i=0;i<this.files.length;i++){
+                imgnum++
+                if(imgnum==10){
+                    $('.photo_container').hide();
+                }else{
+                    $('.photo_container').show();
+                }
+                var reader = new FileReader();
+                reader.readAsDataURL(this.files[i]);
+                reader.onload = function(e){
+                    result = '<div class="imgbox"><img class="popimg" src="'+this.result+'" alt=""/><span class="delx"><img src="http://localhost/h5/static/images/del.png"</span></div>';
+                    div = document.createElement('div');
+                    div.innerHTML = result;
+                    $(".photo_container").before(result);
+
+                }
+            }
+        }
+    }
+    function change(){
+        $('#wai').show();
+        var pic=document.getElementById("file1").files[0];
+        var fd=new FormData();
+        var xhr=new XMLHttpRequest();
+        xhr.open('post','/uploadImage',true);
+        xhr.onreadystatechange=function (){
+            if(this.readyState==4){
+                var data=$.parseJSON(this.responseText);
+                var imgsrc = data.data.retUrl;
+                imgsSrc+=imgsrc+";";
+            }
+        }
+        xhr.upload.onprogress=function (ev){
+            if(ev.lengthComputable){
+                var precent=100 * ev.loaded/ev.total;
+                console.log(precent);
+                document.getElementById('nei').style.width=precent+'%';
+                console.log(Math.floor(precent)+'%')
+                $('#wai').hide();
+            }
+        }
+        fd.append('myFile',pic);
+        xhr.send(fd);
+    }
+</script>
+<script>
+    //==>抵押借款
+    var loanHandler = (function () {
+        //获取链接中传递的参数
+        var pageUrl=window.location.href;
+        var urlObj=getURLParameter(pageUrl);
+        var productTitle=urlObj.productTitle;//标题
+        var productId=urlObj.productId;//产品id
+        var productType=urlObj.productType;//产品type
+        var minMoney=Number(urlObj.minMoney);//借款额最小值
+        var maxMoney=Number(urlObj.maxMoney);//借款额最大值
+        var minTerm=Number(urlObj.minTerm);//借款期限最小值
+        var maxTerm=Number(urlObj.maxTerm);//借款期限最大值
+        var termUnit=urlObj.termUnit;//借款期限单位，年/月
+        //获取下拉框元素
+        var $showCityDom = $('.showCity');
+        var $showCountryDom = $('.showCountry');
+        //房产区域
+        var $oldHouseDom=null;
+        var $newHouseDom=null;
+
+        //获取url中的参数
+        function getURLParameter(url) {
+            var reg=/([^?&#=]+)=([^?&#=]+)/g,
+                obj={};
+            url.replace(reg,function () {
+                obj[arguments[1]]=decodeURI(arguments[2]);
+            });
+            return obj;
+        }
+        //提示窗
+        function promptModal(promptInfo){
+            $('.mt-lottery p').html(promptInfo);
+            $('#toast').show();
+            setTimeout(function () {
+                $('#toast').hide();
+            }, 1500);
+        }
+
+        //文本框输入限制
+        function loanTotalControl(){
+            var $loanTotalDom=$("#loanTotal");
+            if(minMoney&&maxMoney){
+                $loanTotalDom.prop("placeholder","最低"+minMoney+"，最高"+maxMoney);
+            }
+            $loanTotalDom.bind({
+                "input":function(){
+                    if($(this).val()!==""){
+                        $(this).val(Number($(this).val()));
+                    }
+                    var loanTotal=$(this).val();
+                    if(loanTotal>maxMoney){
+                        $(this).val(maxMoney);
+                    }
+                },
+                "blur":function(){
+                    var loanTotal=Number($(this).val());
+                    if(loanTotal<minMoney){
+                        promptModal("单笔借款限"+minMoney+"万元以上");
+                    }
+                }
+            });
+        }
+        function commissionControl(){
+            var $commissionDom=$("#commission");
+            $commissionDom.bind("input",function(){
+                var commission=Number($(this).val());
+                if(commission>5){
+                    $(this).val("5.0");
+                    promptModal("最高佣金限制5.0%");
+                }
+                //保留一位小数
+                this.value=this.value.replace(/^(\d*\.\d)\d+$/,function () {
+                    return arguments[1];
+                });
+            });
+        }
+        function houseAreaControl() {
+            var $houseAreaDom=$("#houseArea");
+            $houseAreaDom.bind("input",function () {
+                var houseArea=Number($houseAreaDom.val());
+                var houseAreaStr=houseArea.toString();
+                if(isNaN(houseArea)){//不能输入特殊字符
+                    $houseAreaDom.val("");
+                }
+                if (houseAreaStr.indexOf(".") !== -1) {//保留两位小数
+                    $houseAreaDom.val(houseAreaStr.substr(0, houseAreaStr.indexOf(".") + 3));
+                }
+                if(houseArea>99999.99){
+                    $houseAreaDom.val(99999.99);
+                }
+            });
+        }
+
+        //添加借款期限数据
+        function addLoanTerm(){
+            var data=[];
+            var pre="1000";
+            termUnit=termUnit==0?"月":"年";
+            for(var i=minTerm;i<=maxTerm;i++){
+                data.push({});
+            }
+            for(var i=0;i<data.length;i++){
+                if(i==9){
+                    pre="100";
+                }
+                data[i].id=pre+(i+1);
+                data[i].value=(i+1)+termUnit;
+            }
+            return data;
+        }
+        //添加申请渠道类型
+        function getUserType(){
+            var dataArr=[];
+            $.ajax({
+                url:"${rc.getContextPath()}/lend/getUserType.do",
+                type:"post",
+                async:false,
+                dataType:"json",
+                success:function(data){
+                    console.log(data)
+                    if(data.code==0){
+                        if(data.data.status==0){//借款人
+                            //自主申请&中介/合作机构
+                            dataArr=[{'id': '10001', 'value': '自主申请'},{'id': '10002', 'value': '中介/合作机构'}];
+                        }else if(data.data.status==2){//管理人代提
+                            //管理人代提
+                            dataArr=[{'id': '10003', 'value': '管理人代提'}];
+                        }else if(data.data.status==1){//中介/合作机构
+                            //中介/合作机构
+                            dataArr=[{'id': '10002', 'value': '中介/合作机构'}];
+                        }else if(data.data.status==3){//自主申请
+                            //自主申请
+                            dataArr=[{'id': '10001', 'value': '自主申请'}];
+                        }
+                    }else{
+                        alert(data.desc);
+                    }
+                },
+                error: function (data) {
+                    alert("服务异常")
+                }
+            });
+            return dataArr;
+        }
+        //创建下拉选择框
+        function createSelect() {
+            var inputId = this.dataset['id'];//给showInput设置自定义属性data-id
+            var inputVal = this.dataset['value'];//给showInput设置自定义属性data-value
+            var _this = this;
+            var selectData = eval('selectData' + _this.dataset["name"]);
+            var data=selectData["data"];
+
+            //如果选择的是区域，找到对应data-pid的区域数据
+            if($(_this).hasClass("showCountry")){
+                if(!$showCountryDom.attr('data-pid')){//如果没有选择市
+                    promptModal("请先选择房产所在城市");
+                    return;
+                }
+                data=selectDataArea[$showCountryDom.attr('data-pid')];
+            }
+            //创建一个下拉选择框实例
+            var mySelect = new IosSelect(1,
+                [data],//下拉框中的数据
+                {
+                    container: '.container',//组件的父元素
+                    title: selectData["title"],//选择框标题
+                    itemHeight: 40,
+                    headerHeight: 40,
+                    oneLevelId: inputId,
+                    itemShowCount: 5,//组件展示选项数目，可以为3,5,7,9，默认为7
+                    callback: function (selectOneObj) {
+                        var val1=$showCityDom.attr('data-value');
+                        _this.innerHTML = selectOneObj.value;//将第一级的值赋值给showInput
+                        _this.dataset['id'] = selectOneObj.id;//给showInput自定义属性data-id赋值
+                        _this.dataset['value'] = selectOneObj.value;//给showInput自定义属性data-value赋值
+                        $(_this).prev("input[type=hidden]").val(selectOneObj.value);
+                        //如果点击的是选择城市，给选择区域赋值data-pid
+                        if($(_this).hasClass("showCity")){
+                            $showCountryDom.attr('data-pid',$(_this).attr("data-id"));
+                            _this.innerHTML += "市";
+                            _this.dataset['value'] += "市";
+                        }
+                        //选择市发生改变时，需要重新选择区
+                        var val2=$showCityDom.attr('data-value');
+                        if(val1&&val1!==val2){
+                            $(".houseCountry").val("");
+                            $(".showCountry").html("<span class='goodscolor'>请选择房产所在区域</span>");
+                        }
+
+                        //如果点击的申请渠道，根据选择展示内容
+                        if($(_this).hasClass("showApply")){
+                            if($(_this).attr("data-id") == "10002"){
+                                $("#input_commission").show();
+                                $("#input_phone").hide();
+                            }else if($(_this).attr("data-id") == "10003"){
+                                $("#input_phone").show();
+                                $("#input_commission").hide();
+                            }else{
+                                $("#input_phone").hide();
+                                $("#input_commission").hide();
+                            }
+                        }
+                    }
+                }
+            );
+        }
+        //有无房本照片切换
+        function photoToggle(){
+            var flag=1;
+            $(".input_house").delegate(".showSelectimg","click",function(){
+                if(flag==0){
+                    $(this).attr("src","images/lend_selected.png");
+                    $(this).parents(".one_house").find(".selectPhoto2").show();
+                    $(this).parents(".one_house").find(".selectPhoto1").hide();
+                    flag=1;
+                }else{
+                    $(this).attr("src","images/lend_select.png");
+                    $(this).parents(".one_house").find(".selectPhoto2").hide();
+                    $(this).parents(".one_house").find(".selectPhoto1").show();
+                    flag=0;
+                }
+            });
+        }
+        //房产添加和删除
+        function houseHandler(){
+            var $photoAddbtnDom=$(".photo_addbtn");
+            var $inputHouseDom=$(".input_house");
+
+            //添加房产
+            var flag=true;
+            $photoAddbtnDom.click(function(){
+                if(flag){
+                    $oldHouseDom.append("<div class='photo_removebtn'><i>1/10</i><span>-</span>删除房产</div>");
+                    $oldHouseDom.attr("data-index",1);
+                    flag=false;
+                }
+                $inputHouseDom.append($newHouseDom.clone().append("<div class='photo_removebtn'><i></i><span>-</span>删除房产</div>"));
+                for(var i=1;i<=$(".one_house").length;i++){
+                    $(".photo_removebtn").eq(i).find("i").html((i+1)+"/10");
+                    $(".one_house").eq(i).attr("data-index",i+1);
+                }
+                if($(".one_house").length==10){//最多添加10条
+                    $photoAddbtnDom.hide();
+                }
+                //删除房产
+                var $photoRemovebtnDom=$(".photo_removebtn");
+                $photoRemovebtnDom.click(function(){
+                    $(this).parent().remove();
+                    if($(".one_house").length<10){
+                        $photoAddbtnDom.show();
+                    }
+                    if($(".one_house").length==1){//至少要有一条，并且不能删除
+                        $photoRemovebtnDom.hide();
+                        flag=true;
+                    }
+                    //删除时，重新排序
+                    for(var i=0;i<=$(".one_house").length;i++){
+                        $(".photo_removebtn").eq(i).find("i").html((i+1)+"/10");
+                        $(".one_house").eq(i).attr("data-index",i+1);
+                    }
+                });
+            });
+        }
+        //验证表单
+        function checkForm() {
+            var loanTotal=Number($("#loanTotal").val())||"";//金额
+            var loanTerm=parseInt($("#loanTerm").val())||"";//期限
+            var loanCity=$("#loanCity").val()||"";//城市
+            var loanName=$("#loanName").val()||"";//姓名
+            var loanChannel=$("#loanChannel").val()||"";//申请渠道
+            var applyChannelType="";
+            var commission=Number($("#commission").val())||"";//期望佣金
+            var loanPhone=$("#loanPhone").val()||"";//手机号
+            imgsSrc=imgsSrc.substring(0,imgsSrc.length-1)||"";//房产照片
+
+            //申请渠道  1-自主申请，2-管理人代提， 4-中介/合作机构
+            if(loanChannel=="自主申请"){
+                applyChannelType=1
+            }else if(loanChannel=="管理人代提"){
+                applyChannelType=2
+            }else if(loanChannel=="中介/合作机构"){
+                applyChannelType=4
+            }
+            //借款期限单位
+            if(termUnit=="月"){
+                termUnit=0;
+            }else{
+                termUnit=1;
+            }
+
+            //添加房产信息的值
+            var len=$(".one_house").length;
+            var houseInfo=[];
+            for(var i=0;i<len;i++){
+                houseInfo.push({});
+            }
+            for(var i=0;i<houseInfo.length;i++){
+                //有房本（行政区县，抵押情况，产权人年龄，房本照片）
+                //无房本（行政区县，房产地址，建筑面积，房产种类，抵押情况，产权人年龄）
+                var $oneHouseDom=$(".one_house").eq(i);
+                var houseNum=Number($oneHouseDom.attr("data-index"))||"";
+                var houseCountry=$oneHouseDom.find(".houseCountry").val()||"";//行政区县
+                var housePledge=$oneHouseDom.find(".housePledge").val();//抵押情况
+                var houseAge=$oneHouseDom.find(".houseAge").val();//产权人年龄
+                //房本照片
+                var houseAddress=$oneHouseDom.find(".houseAddress").val()||"";//房产地址
+                var houseArea=$oneHouseDom.find(".houseArea").val()||"";//建筑面积
+                var houseType=$oneHouseDom.find(".houseType").val()||"";//房产种类
+
+                //对已填数据进行处理
+                //抵押情况
+                if(housePledge=="一抵"){
+                    housePledge=1;
+                }else if(housePledge=="二抵"){
+                    housePledge=2;
+                }
+                //产权人年龄
+                if(houseAge=="有未成年人"){
+                    houseAge=0;
+                }else if(houseAge=="有65岁以上老年人"){
+                    houseAge=1;
+                }else if(houseAge=="未成年、老人均有"){
+                    houseAge=2;
+                }else if(houseAge=="18-65岁"){
+                    houseAge=3;
+                }
+                //房产种类
+                if(houseType=="商品房"){
+                    houseType=1;
+                }else if(houseType=="商品房"){
+                    houseType=2;
+                    console.log(houseType)
+                }else if(houseType=="经济适用房"){
+                    houseType=3;
+                }else if(houseType=="按经济适用房管理"){
+                    houseType=4;
+                }else if(houseType=="优惠价房改房"){
+                    houseType=5;
+                }else if(houseType=="成本价房改房"){
+                    houseType=6;
+                }else if(houseType=="标准价房改房"){
+                    houseType=7;
+                }else if(houseType=="限价房"){
+                    houseType=8;
+                }else if(houseType=="两限房"){
+                    houseType=9;
+                }else if(houseType=="回迁房"){
+                    houseType=10;
+                }else if(houseType=="军产房"){
+                    houseType=11;
+                }else if(houseType=="校产房"){
+                    houseType=12;
+                }else if(houseType=="其他"){
+                    houseType=13;
+                }
+                var isHasHousePhoto=$oneHouseDom.find(".selectPhoto2").css("display")==="block";//是否有房本照片
+                if(isHasHousePhoto){//有房本照片
+                    houseInfo[i]={
+                        "houseNum":houseNum,
+                        "hasHousePhoto": 1,//是否有房本照片,1有，0没有
+                        "houseCounty":houseCountry,//行政区县
+                        "mortgageStatus":housePledge, //抵押情况
+                        "propertyOwnerAge":houseAge,//产权人年龄
+                        "housePhoto":imgsSrc//房本照片
+                    }
+                }else{//无房本照片
+                    houseInfo[i]={
+                        "houseNum":houseNum,
+                        "hasHousePhoto": 0,//是否有房本照片,1有，0没有
+                        "houseCounty":houseCountry, //行政区县
+                        "houseAddress":houseAddress,//房产地址
+                        "houseArea":houseArea,//建筑面积  (Float)
+                        "houseType":houseType,//房产种类
+                        "mortgageStatus":housePledge, //抵押情况
+                        "propertyOwnerAge":houseAge//产权人年龄
+                    }
+                }
+            }
+
+            var dataObj={
+                "productId":productId,//产品id
+                "financingType":productType,//产品类型
+                "financingAmount":loanTotal,//借款总额
+                "financingRepaytime":loanTerm,//借款期限
+                "termUnit":termUnit,//年/月
+                "city":loanCity,//所在城市
+                "borrowerName":loanName,//借款人姓名
+                "applyChannelType":applyChannelType,//申请渠道
+                "brokerage":commission,//期望佣金
+                "borrowerCellphone":loanPhone,//借款人手机号
+                "houseInfo":houseInfo//房产信息
+            };
+            console.log(dataObj);
+
+            //输入项为空时的验证
+            if(loanTotal===""){
+                promptModal("请填写借款金额");
+                return false;
+            }else if(loanTerm===""){
+                promptModal("请选择借款期限");
+                return false;
+            }else if(loanCity===""){
+                promptModal("请选择所在城市");
+                return false;
+            }else if(loanName===""){
+                promptModal("请填写借款人姓名");
+                return false;
+            }else if(loanChannel===""){
+                promptModal("请选择申请渠道");
+                return false;
+            }else if($("#input_commission").css("display")!='none' && commission===""){
+                if(commission===""){
+                    promptModal("请填写期望佣金");
+                    return false;
+                }else if(commission==="0"){
+                    promptModal("期望佣金不能为0");
+                    return false;
+                }
+            }/* else if(houseCountry===""){
+             promptModal("请选择所在区域");
+             return false;
+             }else if(housePledge===""){
+             promptModal("请选择抵押情况");
+             return false;
+             }else if(houseAge===""){
+             promptModal("请选择产权人年龄");
+             return false;
+             } */
+            $.ajax({
+                url:"${rc.getContextPath()}/lend/assess.do",
+                type:"post",
+                data:dataObj,
+                dataType:"json",
+                success:function(data){
+                    console.log(data)
+                },
+                error: function (data) {
+                    alert("服务异常")
+                }
+            })
+        }
+        //触发函数
+        function triggerEvent() {
+            //改变标题
+            document.title+="-"+productTitle;
+
+            //文本框输入限制
+            loanTotalControl();//借款金额
+            commissionControl();//期望佣金
+            houseAreaControl();//建筑面积
+
+            //借款期限添加数据
+            selectDataTerm.data=addLoanTerm();
+
+            //添加申请渠道类型
+            //selectDataChannel.data=getUserType();
+
+            //获取房产区域
+            $oldHouseDom=$(".one_house");
+            $newHouseDom=$oldHouseDom.clone();
+
+            //房产添加和删除
+            houseHandler();
+
+            //有无房本照片切换
+            photoToggle();
+
+            //下拉框的操作
+            $(".lendorderForm").delegate(".showInput",'click', function (e) {
+                createSelect.call(this);
+            });
+
+            //提交
+            $("#creditBtn").bind('click', function () {//给creditBtn绑定点击事件
+                checkForm();
+            });
+        }
+        return {
+            triggerEvent: triggerEvent
+        }
+    })();
+    loanHandler.triggerEvent();
+</script>
+</body>
+</html>
