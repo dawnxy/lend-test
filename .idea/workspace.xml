@@ -31,10 +31,10 @@
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="71">
-              <caret line="24" column="85" lean-forward="false" selection-start-line="24" selection-start-column="85" selection-end-line="24" selection-end-column="85" />
+              <caret line="24" column="88" lean-forward="false" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="88" />
               <folding>
-                <element signature="e#2019#2461#0" expanded="false" />
-                <element signature="e#2515#2901#0" expanded="false" />
+                <element signature="e#2022#2464#0" expanded="false" />
+                <element signature="e#2518#2904#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -247,12 +247,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494133762396</updated>
-      <workItem from="1494133765630" duration="31766000" />
+      <workItem from="1494133765630" duration="31834000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31766000" />
+    <option name="totallyTimeSpent" value="31834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -349,10 +349,10 @@
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
-          <caret line="24" column="85" lean-forward="false" selection-start-line="24" selection-start-column="85" selection-end-line="24" selection-end-column="85" />
+          <caret line="24" column="88" lean-forward="false" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="88" />
           <folding>
-            <element signature="e#2019#2461#0" expanded="false" />
-            <element signature="e#2515#2901#0" expanded="false" />
+            <element signature="e#2022#2464#0" expanded="false" />
+            <element signature="e#2518#2904#0" expanded="false" />
           </folding>
         </state>
       </provider>
