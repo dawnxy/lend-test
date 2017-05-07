@@ -1,47 +1,77 @@
 <html>
-<meta name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <head>
-    <script language="JavaScript" >
-        function onlyNumber(obj){
-            obj.type="text";//得到焦点时，文本框变为'text'类型，以便控制输入
-            obj.value = obj.value.replace(/[^\d\.]/g,'');//先把非数字的都替换掉，除了数字和.
-            obj.value = obj.value.replace(/^\./g,''); //必须保证第一个为数字而不是.
-            obj.value = obj.value.replace(/\.{2,}/g,'.');//保证只有出现一个.而没有多个.
-            obj.value = obj.value.replace('.','$#$').replace(/\./g,'').replace('$#$','.');//保证.只出现一次，而不能出现两次以上
-            obj.value=obj.value.replace(/^(\d*\.\d{2})\d*/,function () {//保留两位小数点
-                return arguments[1];
-            });
-            obj.value=obj.value.replace(/^0(\d)/,function () {//输入两位以上的整数时，第一位不能为0
-                return arguments[1]
-            })
-        }
-        function changeType(obj){
-            obj.type="number";
-        }
-
-
-        function clearNoNum(obj) {
-            obj.value = obj.value.replace(/[^d.]/g, "");//清除“数字”和“.”以外的字符
-            obj.value = obj.value.replace(/^./g, "");//验证第一个字符是数字而不是.
-            obj.value = obj.value.replace(/.{2,}/g, ".");//只保留第一个. 清除多余的.
-            obj.value = obj.value.replace(".", "$#$").replace(/./g,"").replace("$#$", ".");
-        }
-    </script>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="content-Type" content="text/html;charset=gb2312">
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <title>限制文本框只能输入数字||只能是数字和小数点||只能是整数和浮点数</title>
+    <title>文本框输入控制</title>
 </head>
 <body>
-<hr/>
-只能输入数字的文本框：<input onkeyup="this.value=this.value.replace(/\D/g,'')" onblur="this.value=this.value.replace(/\D/g,'')"/>
-<br/>
-<hr/>
-只能输入数字和小数点的文本框：<input onkeyup="value=value.replace(/[^\d\.]/g,'')" onblur="value=value.replace(/[^\d\.]/g,'')"/>
-<br/>
-<hr/>
-只能输入数字且只能有一个小数点的文本框（小数点不能在开头，可以在结尾，第一位允许添加负号即浮点数）：<input oninput="onlyNumber(this)" onblur="onlyNumber(this)" onfocus="changeType(this)" />
-<hr/>
+<ul>
+    <li>文本框得到焦点时，调用数字键盘</li>
+    <li>只能输入数字和小数点，不能输入其他特殊字符</li>
+    <li>第一位不能为小数点</li>
+    <li>只能有一个小数点</li>
+    <li>输入两位以上的整数时，第一位不能为0(如果输入03，则转换为3)</li>
+    <li>保留两位小数</li>
+    <li>用户修改时，重新定位光标位置</li>
+</ul>
+<input oninput="onlyNumber(this)" onfocus="changeType(this)" />
+<script language="JavaScript" >
+    var flag=true;
+    function onlyNumber(obj){
+        obj.type="text";//得到焦点时，文本框变为'text'类型，以便控制输入
+        var n=getCursortPosition(obj);//获取光标位置
+        obj.value = obj.value.replace(/[^\d\.]/g,'');//先把非数字的都替换掉，除了数字和.
+        obj.value = obj.value.replace(/^\./g,''); //必须保证第一个为数字而不是.
+        obj.value = obj.value.replace(/\.{2,}/g,'.');//保证只有出现一个.而没有多个.
+        obj.value = obj.value.replace('.','$#$').replace(/\./g,'').replace('$#$','.');//保证.只出现一次，而不能出现两次以上
+        obj.value=obj.value.replace(/^(\d*\.\d{2})\d*/,function () {//保留两位小数点
+            return arguments[1];
+        });
+        obj.value=obj.value.replace(/^0(\d)/,function () {//输入两位以上的整数时，第一位不能为0
+            return arguments[1]
+        });
+
+        if(flag){
+            n=n+1;
+            flag=false;
+        }
+        console.log(n);
+        setCaretPosition(obj, n);//设置光标位置
+    }
+    //改变文本框的类型
+    function changeType(obj){
+        obj.type="number";
+    }
+    //获取光标位置
+    function getCursortPosition (ctrl) {
+        var CaretPos = 0;   // IE Support
+        if (document.selection) {
+            ctrl.focus ();
+            var Sel = document.selection.createRange ();
+            Sel.moveStart ('character', -ctrl.value.length);
+            CaretPos = Sel.text.length;
+        }
+        // Firefox support
+        else if (ctrl.selectionStart || ctrl.selectionStart == '0')
+            CaretPos = ctrl.selectionStart;
+        return CaretPos;
+    }
+    //设置光标位置
+    function setCaretPosition(ctrl, pos){
+        if(ctrl.setSelectionRange)
+        {
+            ctrl.focus();
+            ctrl.setSelectionRange(pos,pos);
+        }
+        else if (ctrl.createTextRange) {
+            var range = ctrl.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    }
+</script>
 </body>
 </html>
