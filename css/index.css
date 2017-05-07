@@ -74,11 +74,12 @@
 }
 .input_line {
   display: -webkit-box;
+  -webkit-box-align: center;
   height: 0.4rem;
   line-height: 0.4rem;
   border-bottom: 1px solid #e7e7e7;
   color: #4d4d4d;
-  font-size: 15px;
+  font-size: .3rem;
   padding: 0.3rem 0.37rem 0.3rem 0;
   margin: 0 0.3rem;
 }
