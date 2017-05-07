@@ -113,7 +113,7 @@
         </div>
         <div class="input_line" style="display:none;" id="input_commission">
             <label><span>*</span>期望佣金</label>
-            <input type="tel" placeholder="请合理填入，提高审核通过率" name="commission" id="commission" autocomplete="off" maxlength="3" />
+            <input type="number" placeholder="请合理填入，提高审核通过率" name="commission" id="commission" autocomplete="off" maxlength="3" />
             <span class="r_sp r_sps">%</span>
         </div>
         <div class="input_line" style="display:none;" id="input_phone">
@@ -373,18 +373,37 @@
                 }
             });
         }
+        //期望佣金输入控制
         function commissionControl(){
             var $commissionDom=$("#commission");
+            var flag=true;
             $commissionDom.bind("input",function(){
-                var commission=Number($(this).val());
-                if(commission>5){
+                var commission=$(this).val();
+                //保留一位小数
+                if (commission.indexOf(".") !== -1) {
+                    $(this).val(commission.substr(0, commission.indexOf(".") + 2));
+                }
+                //大于5.0时，设置为5.0
+                if(Number(commission)>5){
                     $(this).val("5.0");
                     promptModal("最高佣金限制5.0%");
                 }
-                //保留一位小数
-                this.value=this.value.replace(/^(\d*\.\d)\d+$/,function () {
-                    return arguments[1];
-                });
+                //只能输入一个小数点，输入多个时，直接清空文本框
+                if(isNaN(parseFloat(commission))){
+                    $(this).val("");
+                }
+                //第一个字符不能为.
+                if(flag){
+                    this.value = this.value.replace(/^\./,"");
+                    flag=false;
+                }
+                if(commission===""){
+                    flag=true;
+                }
+                //03-->3
+                if(commission.match(/^0\d/)){
+                    $(this).val(Number(commission));
+                }
             });
         }
         function houseAreaControl() {
