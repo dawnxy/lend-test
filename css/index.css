@@ -94,7 +94,7 @@
   -webkit-box-flex: 1;
   display: block;
   height: 0.4rem;
-  line-height: 0.4rem;
+  line-height: normal;
   text-align: right;
   color: #4d4d4d;
 }
