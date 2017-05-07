@@ -2,33 +2,35 @@
 <head>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="content-Type" content="text/html;charset=utf-8">
-    <title>æ–‡æœ¬æ¡†è¾“å…¥æ§åˆ¶</title>
+    <meta http-equiv="content-Type" content="text/html;charset=gb2312">
+    <title>ÎÄ±¾¿òÊäÈë¿ØÖÆ</title>
 </head>
 <body>
 <ul>
-    <li>æ–‡æœ¬æ¡†å¾—åˆ°ç„¦ç‚¹æ—¶ï¼Œè°ƒç”¨æ•°å­—é”®ç›˜</li>
-    <li>åªèƒ½è¾“å…¥æ•°å­—å’Œå°æ•°ç‚¹ï¼Œä¸èƒ½è¾“å…¥å…¶ä»–ç‰¹æ®Šå­—ç¬¦</li>
-    <li>ç¬¬ä¸€ä½ä¸èƒ½ä¸ºå°æ•°ç‚¹</li>
-    <li>åªèƒ½æœ‰ä¸€ä¸ªå°æ•°ç‚¹</li>
-    <li>è¾“å…¥ä¸¤ä½ä»¥ä¸Šçš„æ•´æ•°æ—¶ï¼Œç¬¬ä¸€ä½ä¸èƒ½ä¸º0(å¦‚æœè¾“å…¥03ï¼Œåˆ™è½¬æ¢ä¸º3)</li>
-    <li>ä¿ç•™ä¸¤ä½å°æ•°</li>
-    <li>ç”¨æˆ·ä¿®æ”¹æ—¶ï¼Œé‡æ–°å®šä½å…‰æ ‡ä½ç½®</li>
+    <li>ÎÄ±¾¿òµÃµ½½¹µãÊ±£¬µ÷ÓÃÊı×Ö¼üÅÌ</li>
+    <li>Ö»ÄÜÊäÈëÊı×ÖºÍĞ¡Êıµã£¬²»ÄÜÊäÈëÆäËûÌØÊâ×Ö·û</li>
+    <li>µÚÒ»Î»²»ÄÜÎªĞ¡Êıµã</li>
+    <li>Ö»ÄÜÓĞÒ»¸öĞ¡Êıµã</li>
+    <li>ÊäÈëÁ½Î»ÒÔÉÏµÄÕûÊıÊ±£¬µÚÒ»Î»²»ÄÜÎª0(Èç¹ûÊäÈë03£¬Ôò×ª»»Îª3)</li>
+    <li>±£ÁôÁ½Î»Ğ¡Êı</li>
+    <li>ÓÃ»§ĞŞ¸ÄÊ±£¬ÖØĞÂ¶¨Î»¹â±êÎ»ÖÃ</li>
 </ul>
-<input oninput="onlyNumber(this)" />
+<input oninput="onlyNumber(this)" onfocus="changeType(this)" />
 <script language="JavaScript" >
     var flag=true;
     function onlyNumber(obj){
-        obj.type="text";//å¾—åˆ°ç„¦ç‚¹æ—¶ï¼Œæ–‡æœ¬æ¡†å˜ä¸º'text'ç±»å‹ï¼Œä»¥ä¾¿æ§åˆ¶è¾“å…¥
-        var n=getCursortPosition(obj);//è·å–å…‰æ ‡ä½ç½®
-        obj.value = obj.value.replace(/[^\d\.]/g,'');//å…ˆæŠŠéæ•°å­—çš„éƒ½æ›¿æ¢æ‰ï¼Œé™¤äº†æ•°å­—å’Œ.
-        obj.value = obj.value.replace(/^\./g,''); //å¿…é¡»ä¿è¯ç¬¬ä¸€ä¸ªä¸ºæ•°å­—è€Œä¸æ˜¯.
-        obj.value = obj.value.replace(/\.{2,}/g,'.');//ä¿è¯åªæœ‰å‡ºç°ä¸€ä¸ª.è€Œæ²¡æœ‰å¤šä¸ª.
-        obj.value = obj.value.replace('.','$#$').replace(/\./g,'').replace('$#$','.');//ä¿è¯.åªå‡ºç°ä¸€æ¬¡ï¼Œè€Œä¸èƒ½å‡ºç°ä¸¤æ¬¡ä»¥ä¸Š
-        obj.value=obj.value.replace(/^(\d*\.\d{2})\d*/,function () {//ä¿ç•™ä¸¤ä½å°æ•°ç‚¹
+        obj.type="text";//µÃµ½½¹µãÊ±£¬ÎÄ±¾¿ò±äÎª'text'ÀàĞÍ£¬ÒÔ±ã¿ØÖÆÊäÈë
+        var n=getCursortPosition(obj);//»ñÈ¡¹â±êÎ»ÖÃ
+
+        console.log(n);
+        obj.value = obj.value.replace(/[^\d\.]/g,'');//ÏÈ°Ñ·ÇÊı×ÖµÄ¶¼Ìæ»»µô£¬³ıÁËÊı×ÖºÍ.
+        obj.value = obj.value.replace(/^\./g,''); //±ØĞë±£Ö¤µÚÒ»¸öÎªÊı×Ö¶ø²»ÊÇ.
+        obj.value = obj.value.replace(/\.{2,}/g,'.');//±£Ö¤Ö»ÓĞ³öÏÖÒ»¸ö.¶øÃ»ÓĞ¶à¸ö.
+        obj.value = obj.value.replace('.','$#$').replace(/\./g,'').replace('$#$','.');//±£Ö¤.Ö»³öÏÖÒ»´Î£¬¶ø²»ÄÜ³öÏÖÁ½´ÎÒÔÉÏ
+        obj.value=obj.value.replace(/^(\d*\.\d{2})\d*/,function () {//±£ÁôÁ½Î»Ğ¡Êıµã
             return arguments[1];
         });
-        obj.value=obj.value.replace(/^0(\d)/,function () {//è¾“å…¥ä¸¤ä½ä»¥ä¸Šçš„æ•´æ•°æ—¶ï¼Œç¬¬ä¸€ä½ä¸èƒ½ä¸º0
+        obj.value=obj.value.replace(/^0(\d)/,function () {//ÊäÈëÁ½Î»ÒÔÉÏµÄÕûÊıÊ±£¬µÚÒ»Î»²»ÄÜÎª0
             return arguments[1]
         });
 
@@ -36,15 +38,13 @@
             n=n+1;
             flag=false;
         }
-        console.log(n);
-        setCaretPosition(obj, n);//è®¾ç½®å…‰æ ‡ä½ç½®
+        setCaretPosition(obj, n);//ÉèÖÃ¹â±êÎ»ÖÃ
     }
-    //æ”¹å˜æ–‡æœ¬æ¡†çš„ç±»å‹
-    /*function changeType(obj){
-        n=getCursortPosition(obj);//è·å–å…‰æ ‡ä½ç½®
-        //obj.type="number";
-    }*/
-    //è·å–å…‰æ ‡ä½ç½®
+    //¸Ä±äÎÄ±¾¿òµÄÀàĞÍ
+    function changeType(obj){
+        obj.type="number";
+    }
+    //»ñÈ¡¹â±êÎ»ÖÃ
     function getCursortPosition (ctrl) {
         var CaretPos = 0;   // IE Support
         if (document.selection) {
@@ -58,7 +58,7 @@
             CaretPos = ctrl.selectionStart;
         return CaretPos;
     }
-    //è®¾ç½®å…‰æ ‡ä½ç½®
+    //ÉèÖÃ¹â±êÎ»ÖÃ
     function setCaretPosition(ctrl, pos){
         if(ctrl.setSelectionRange)
         {
