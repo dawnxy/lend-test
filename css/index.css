@@ -74,10 +74,12 @@
 }
 .input_line {
   display: -webkit-box;
+  height: 0.4rem;
+  line-height: 0.4rem;
   border-bottom: 1px solid #e7e7e7;
   color: #4d4d4d;
-  font-size: 15px;
-  padding: 15px 0.37rem 15px 0;
+  font-size: .3rem;
+  padding: 0.3rem 0.37rem 0.3rem 0;
   margin: 0 0.3rem;
 }
 .input_line label {
@@ -91,14 +93,16 @@
 .input_line .showInput {
   -webkit-box-flex: 1;
   display: block;
-  height: 20px;
-  line-height: 20px;
+  height: 0.4rem;
+  line-height: 0.4rem;
   text-align: right;
   color: #4d4d4d;
 }
 .input_line .r_sp {
   display: inline-block;
-  width: 15px;
+  width: 0.3rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
   text-align: right;
 }
 .calc_btn {
