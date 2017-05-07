@@ -15,7 +15,7 @@
     <li>保留两位小数</li>
     <li>用户修改时，重新定位光标位置</li>
 </ul>
-<input oninput="onlyNumber(this)" onfocus="changeType(this)" />
+<input onkeydown="onlyNumber(this)" onclick="changeType(this)" />
 <script language="JavaScript" >
     var flag=true;
     function onlyNumber(obj){
