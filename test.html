@@ -15,7 +15,7 @@
     <li>保留两位小数</li>
     <li>用户修改时，重新定位光标位置</li>
 </ul>
-<input oninput="onlyNumber(this)"/>
+<input oninput="onlyNumber(this)" type="number" onblur="changeType(this)"/>
 <script language="JavaScript" >
     var flag=true;
     function onlyNumber(obj){
@@ -38,10 +38,10 @@
         }
         setCaretPosition(obj, n);//设置光标位置
     }
-    /*//改变文本框的类型
+    //改变文本框的类型
     function changeType(obj){
         obj.type="number";
-    }*/
+    }
     //获取光标位置
     function getCursortPosition (ctrl) {
         var CaretPos = 0;   // IE Support
