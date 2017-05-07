@@ -22,7 +22,7 @@
         <li>6、保留两位小数</li>
         <li>7、用户修改时，重新定位光标位置</li>
     </ul>
-    <input oninput="onlyNumber(this)" type="number" onblur="changeType(this)" onkeydown="this.value = this.value.replace(/[^\d\.]/g,'');"/>
+    <input oninput="onlyNumber(this)" type="number" onblur="changeType(this)" onkeyup="this.value = this.value.replace(/[^\d\.]/g,'');"/>
 </div>
 <script language="JavaScript" >
     var flag=true;
