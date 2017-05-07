@@ -25,10 +25,10 @@
     <input oninput="onlyNumber(this)" type="number" onblur="changeType(this)"/>
 </div>
 <script language="JavaScript" >
-    //var flag=true;
+    var flag=true;
     function onlyNumber(obj){
         obj.type="text";//得到焦点时，文本框变为'text'类型，以便控制输入
-        //var n=getCursortPosition(obj);//获取光标位置
+        var n=getCursortPosition(obj);//获取光标位置
         obj.value = obj.value.replace(/[^\d\.]/g,'');//先把非数字的都替换掉，除了数字和.
         obj.value = obj.value.replace(/^\./g,''); //必须保证第一个为数字而不是.
         obj.value = obj.value.replace(/\.{2,}/g,'.');//保证只有出现一个.而没有多个.
@@ -39,12 +39,11 @@
         obj.value=obj.value.replace(/^0(\d)/,function () {//输入两位以上的整数时，第一位不能为0
             return arguments[1]
         });
-
-        /*if(flag){
-         n=n+1;
-         flag=false;
+        if(flag){
+             n=n+1;
+             flag=false;
          }
-         setCaretPosition(obj, n);//设置光标位置*/
+         setCaretPosition(obj, n);//设置光标位置
     }
     //改变文本框的类型
     function changeType(obj){
