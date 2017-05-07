@@ -4,6 +4,7 @@
 <head>
     <script language="JavaScript" >
         function onlyNumber(obj){
+            obj.type="text";
 //得到第一个字符是否为负号
             var t = obj.value.charAt(0);
 //先把非数字的都替换掉，除了数字和.
@@ -19,6 +20,9 @@
                 obj.value = '-'+obj.value;
             }
         }
+        function changeType(obj){
+            obj.type="number";
+        }
     </script>
     <meta http-equiv="content-Type" content="text/html;charset=gb2312">
     <meta name="keywords" content="" />
@@ -33,7 +37,7 @@
 只能输入数字和小数点的文本框：<input onkeyup="value=value.replace(/[^\d\.]/g,'')" onblur="value=value.replace(/[^\d\.]/g,'')"/>
 <br/>
 <hr/>
-只能输入数字且只能有一个小数点的文本框（小数点不能在开头，可以在结尾，第一位允许添加负号即浮点数）：<input oninput="onlyNumber(this)" onblur="onlyNumber(this)" />
+只能输入数字且只能有一个小数点的文本框（小数点不能在开头，可以在结尾，第一位允许添加负号即浮点数）：<input oninput="onlyNumber(this)" onblur="onlyNumber(this)" onfocus="changeType(this)" />
 <hr/>
 </body>
 </html>
