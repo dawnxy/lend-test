@@ -8,29 +8,37 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style>
-        *{ margin:0; padding:0;}
-        body{ position: relative; font:0.28rem "微软雅黑";}
-        input{ border:none; outline:none; font-size: 0.28rem;}
+        body{ position: relative; font-family:"微软雅黑";}
+        input{ border:none; outline:none; font-size: 15px;}
         *{ -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color: transparent; /* For some Androids */ }
         a{-webkit-tap-highlight-color:rgba(255,255,255,0);}
         ::-webkit-input-placeholder { /* WebKit browsers */ color:#999;font-family:"微软雅黑";}
         :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color:#999;font-family:"微软雅黑";}
         ::-moz-placeholder { /* Mozilla Firefox 19+ */ color:#999;font-family:"微软雅黑";}
         :-ms-input-placeholder { /* Internet Explorer 10+ */color:#999;font-family:"微软雅黑";}
-
+        .topbar{background:#fff; color:#333; border-bottom:1px solid #9ed0fc;position: fixed; width: 100%;padding: 8px 0 10px 0; top:0; z-index:499}
+        .topbar img{ width:14px;}
+        .topbars a img {vertical-align: -1px;margin-right: 9px;}
+        .main{ padding:40px 0 41px;}
+        .displayBox p{ margin-left:12px;}
+        .topbar .textR img {width: 14px;}
+        .textR{position: absolute;right: 12px;}
+        .displayBox p{ width: inherit}
+        /* .lendorderForm{ margin-top:40px;} */
         /* 样式重设 */
-        .input_box{margin-bottom:0.2rem;    border-top: 1px solid #e7e7e7; background: #fff;}
-        .input_line{padding-right:0.3rem;}
-        .select_line{padding-right:0.3rem;}
+        .lendorderForm .input_line{ padding-right:.3rem;}
+        .input_box{margin-bottom:10px;    border-top: 1px solid #e7e7e7; background: #fff;}
+        .input_line{margin:0;padding:15px .6rem 15px .3rem;}
+        .select_line{padding-right:15px;}
         .input_line label{color:#000;}
         .input_line label span{color:#ff0000;}
-        .input_line .r_sp{    width: 0.7rem;}
-        .select_line .arrow{ width: 0.37rem;}
+        .input_line .r_sp{    width: 35px;}
+        .select_line .arrow{ width: 19px;}
         .input_line input, .input_line .goodscolor{color:#999;}
-        .input_line input, .input_line .showSelect{color:#000;}
-        .input_line .showSelect{ -webkit-box-flex: 1; display: block; height: 0.4rem; line-height: 0.4rem; text-align: right; color: #4d4d4d;}
+        .input_line input, .input_line .showSelect{color:#4d4d4d;}
+        .input_line .showSelect{ position:relative; -webkit-box-flex: 1; display: block; height: 20px; line-height:20px; text-align: right; color: #4d4d4d;}
         .applyAssess input{background: #359df6;}
-        .input_line .r_sps{width: 0.37rem;}
+        .input_line .r_sps{width: 19px;}
         .photo_line .showInput{color:#359df5;}
         /* 下拉选择框样式重设 */
         .ios-select-widget-box.olay{ background:rgba(0,0,0,0.5);}
@@ -45,12 +53,12 @@
         .ios-select-widget-box .cover-area2 { border-top-color:#e7e7e7;}
 
         /* 上传图片  */
-        #content{width:100%}
-        #content img.popimg{float:left;width:2.1rem;height:2.1rem;overflow:hidden}
-        .file{ float:left; margin-left:.3rem;/*margin-top:.3rem;*/ margin-bottom:.3rem;background:url(images/addimg.png) no-repeat;overflow:hidden;text-decoration:none;text-indent:0;width:2.1rem;background-size:2.1rem 2.1rem;height:2.1rem}
+        .xxcontent{width:100%}
+        .xxcontent img.popimg{float:left;width:2.1rem;height:2.1rem;overflow:hidden}
+        .file{margin-left:.3rem;margin-bottom:.3rem;display:inline-block;background:url(http://image.kuaikuaidai.com/h5/static/images/addimg.png) no-repeat;overflow:hidden;text-decoration:none;text-indent:0;width:2.1rem;background-size:2.1rem 2.1rem;height:2.1rem}
         .file input{opacity:0;height:2.1rem;width:2.1rem}
-        .delx{position:absolute;right:-10px;top:-10px;display:none}
-        .imgbox{position:relative;width:2.1rem;height:2.1rem;margin-left:.3rem;/*margin-top:.3rem;*/ margin-bottom:.3rem; float:left}
+        .delx{position:absolute;right:-10px;top:-10px;display:none;width:0.4rem;height:0.4rem;}
+        .imgbox{position:relative;width:2.1rem;height:2.1rem;margin-left:.3rem;margin-bottom:.3rem;float:left}
         .del{display:none;
             color: #359df5;
             -webkit-box-flex: 1;
@@ -58,17 +66,16 @@
             line-height: 0.4rem;
             text-align: right;}
         #open,.hide{display:none}
-        #wai{
+        .wai{
             width:100%;
             height:1px;
             display:none;
         }
-        #nei{
+        .nei{
             width:0px;
             height:1px;
             background:#359df6;
         }
-
     </style>
     <script src="js/jquery.1.11.0.min.js"></script>
     <script src="js/lendindex.js"></script>

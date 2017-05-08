@@ -76,13 +76,13 @@
   display: -webkit-box;
   border-bottom: 1px solid #e7e7e7;
   color: #4d4d4d;
-  font-size: .28rem;
-  padding: 0.3rem 0.37rem 0.3rem 0;
-  margin: 0 0.3rem;
+  font-size: 15px;
+  padding: 15px 19px 15px 0;
+  margin: 0 .3rem;
 }
 .input_line label {
-  width: 2rem;
-  display: inline-block;
+  width: 95px;
+  display: block;
 }
 .input_line input {
   font-family: "微软雅黑";
@@ -95,26 +95,25 @@
   color: #4d4d4d;
 }
 .input_line .r_sp {
-  display: inline-block;
-  width: 0.3rem;
-  height: 0.4rem;
+  display: block;
+  width: 15px;
   text-align: right;
 }
 .calc_btn {
-  padding: 0.4rem 0.4rem 0;
+  padding: 20px 20px 0;
   text-align: center;
 }
 .calc_btn input {
   width: 100%;
-  height: 0.98rem;
+  height: 49px;
   color: #fff;
-  font-size: 0.32rem;
+  font-size: 16px;
   background: #359df5;
   border-radius: 2px;
 }
 .txt_info1 {
-  padding: 0.3rem 0.5rem;
-  font-size: 0.22rem;
+  padding: 15px 25px;
+  font-size: 12px;
   color: #d0d2d3;
   text-align: center;
 }
@@ -122,9 +121,9 @@
   padding-right: 0;
 }
 .select_line .arrow {
-  width: 0.37rem;
+  width: 19px;
   background: url("../images/select_arrow.png") no-repeat right center;
-  background-size: 0.15rem 0.28rem;
+  background-size: 8px 14px;
 }
 /*房贷计算器弹窗*/
 .cover {
@@ -245,8 +244,9 @@
 /*借款端我的页面样式*/
 .zportrait {
   padding: 0.3rem 0.3rem 0;
-  background: #359df5 url("../images/zlendbala.png") 0 3.85rem no-repeat;
+  background: #359df5 url("../images/zlendbala.png") scroll no-repeat;
   background-size: 7.5rem 0.86rem;
+  background-position: left 0 bottom 0;
 }
 .zportrait a {
   font-size: 0.3rem;
@@ -353,6 +353,11 @@
   color: #fff;
   display: block;
 }
+.zyongjin {
+  font-size: 0.24rem;
+  color: #e4effd;
+  margin-top: 0.28rem;
+}
 /*拨打管理人电话弹框*/
 .zlendbomb,
 .zlendbomb1 {
@@ -388,7 +393,6 @@
   border-bottom: 1px solid #eaeaea;
 }
 .zlendglrtell {
-  border-bottom: 1px solid #eaeaea;
   text-align: center;
   padding: 0.48rem 0 0.6rem 0;
   color: #666;
@@ -410,6 +414,7 @@
 .zlendtebtn {
   height: 1rem;
   line-height: 1rem;
+  border-top: 1px solid #eaeaea;
 }
 .zlendtebtn a {
   width: 2.94rem;
@@ -444,7 +449,6 @@
 .zlendts .zlrtell2 {
   text-align: center;
   padding-bottom: 0.6rem;
-  border-bottom: 1px solid #eaeaea;
 }
 /*下载app弹框*/
 .zlendapp {
@@ -484,10 +488,12 @@
 }
 .zlendarea {
   width: 100%;
+  box-sizing: border-box;
   height: 3.95rem;
   background: #fff;
   color: #999;
   font-size: 0.26rem;
+  line-height: 0.5rem;
   resize: none;
   padding: 0.3rem 0.32rem;
   outline: none;
@@ -559,9 +565,9 @@
   font-style: normal;
 }
 .loanContnum p {
-  margin-top: 0.1rem;
   color: #999;
   font-size: 0.22rem;
+  margin-top: 0.05rem;
 }
 .loanConttxt {
   width: 4.1rem;
@@ -570,7 +576,8 @@
 .loanConttxt h4 {
   width: 4.1rem;
   font-size: 0.3rem;
-  color: #666;
+  font-weight: normal;
+  color: #333;
   margin-bottom: 0.22rem;
   overflow: hidden;
   white-space: nowrap;
@@ -578,7 +585,9 @@
 }
 .loanConttxt p span {
   display: inline-block;
-  padding: 0.05rem 0.1rem;
+  padding: 0 0.1rem;
+  height: 23px;
+  line-height: 23px;
   background: #f7fbfb;
   color: #3674b3;
   font-size: 0.2rem;
@@ -598,17 +607,17 @@
   z-index: 999;
 }
 /*借款端订单提交页*/
-.lendorderForm {
-  padding-bottom: 31px;
-}
 .photo_line {
   border-bottom: none;
+}
+.photo_lines {
+  height: 0.8rem;
 }
 .photo_line label {
   width: 5.9rem;
 }
 .photo_line label i {
-  font-size: .2rem;
+  font-size: 12px;
   font-style: normal;
   color: #999;
 }
@@ -646,20 +655,24 @@
   background: #fff;
   margin-bottom: 0.2rem;
   font-size: 0.3rem;
-  border-bottom: .2rem solid #f3f3f3;
 }
 .photo_removebtn {
   position: relative;
   color: #ff7100;
+  border-top: .2rem solid #f3f3f3;
+  border-bottom: .2rem solid #f3f3f3;
+  margin-bottom: .2rem;
 }
 .photo_addbtn span,
 .photo_removebtn span {
   padding-right: 0.2rem;
 }
 .showSelectimg {
-  width: 0.2rem;
-  height: 0.2rem;
-  margin-right: 0.2rem;
+  position: absolute;
+  right: 75px;
+  width: 10px;
+  height: 10px;
+  padding: 6px 10px;
 }
 .creditarea {
   width: 6.65rem;
@@ -723,74 +736,95 @@
   color: #fff;
   margin: 0 auto;
 }
-.applyAssess {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-.applyAssess input {
-  color: #fff;
-  display: inline-block;
-  background: #30c4de;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 16px;
-  font-family: "微软雅黑";
-  border: none;
-}
-.allmeng {
-  display: none;
-}
-.allmengs {
-  display: none;
-}
-.xtoast .mt-lottery p {
-  color: #ffffff;
-}
-.xtoast .mt-lottery {
-  background: url("../images/xmengt.png") no-repeat center center;
-}
-.mt-lottery {
-  color: #505050;
-  width: 80%;
-  position: fixed;
+/*拍拍贷页面样式*/
+.zppdailis {
+  height: 0.3rem;
+  display: -webkit-box;
+  font-size: 0.3rem;
+  line-height: 0.3rem;
+  padding: 0.38rem 0.3rem;
   background: #fff;
-  z-index: 99999;
-  border-radius: 10px;
-  top: 50%;
-  left: 50%;
-  margin-top: -25%;
-  margin-left: -42%;
-  overflow: hidden;
-  text-align: center;
-  padding: 20px 2%;
-  line-height: 24px;
+  border-bottom: 1px solid #e7e7e7;
 }
-/*新增样式*/
-.bg_f3 {
-  background: #f3f3f3;
+.zppdailis label {
+  width: 2rem;
+  color: #000;
+  display: inline-block;
 }
-.clearfix:after {
+.zppdailis label span {
+  color: #f00;
+}
+.zppdairi {
+  margin-left: 0.2rem;
+}
+.zppdailis input {
+  -webkit-box-flex: 1;
+  text-align: right;
+  font-size: 0.26rem;
   display: block;
-  content: "";
-  font-size: 0;
-  line-height: 0;
-  clear: both;
-  overflow: hidden;
 }
-.delx {
-  width: .5rem;
-  height: .5rem;
+.zppdairi {
+  display: inline-block;
 }
-.delx img {
-  width: 100%;
-  height: 100%;
+.zppdaibac {
+  width: 0.37rem;
+  margin-bottom: -0.02rem;
+  display: inline-block;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  background: url("../images/select_arrow.png") no-repeat right center;
+  background-size: 0.15rem 0.28rem;
 }
-.photo_removebtn {
-  border-top: .2rem solid #f3f3f3;
-  border-bottom: .2rem solid #f3f3f3;
-  margin-bottom: .2rem;
+.zppdailis .showInput {
+  -webkit-box-flex: 1;
+  padding-top: 0.02rem;
+  display: block;
+  text-align: right;
+  font-size: 0.26rem;
+}
+.zppdaimar {
+  margin-bottom: 0.2rem;
+}
+.zppdailis .goodscolor {
+  font-size: 0.26rem;
+  color: #999;
+}
+.zppdaitbo {
+  border-top: 1px solid #e7e7e7;
+}
+#ztoast .mt-lottery {
+  width: 3.65rem;
+  font-size: 0.3rem;
+  padding: 0.3rem;
+  text-align: center;
+  margin-left: -1.82rem;
+  color: #fff;
+}
+.zppdaitop img {
+  width: 1.5rem;
+}
+.zppdaibox {
+  padding-bottom: 50px;
+}
+.zppdaitop {
+  text-align: center;
+  margin: 0.4rem 0 0.3rem;
+}
+.zppdaidesc {
+  font-size: 0.28rem;
+  color: #050505;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.zppdaifxbtn {
+  width: 4.2rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  color: #fff;
+  font-size: 0.3rem;
+  background: #359df6;
+  display: block;
+  margin: 0 auto 0.4rem;
+  text-align: center;
+  border-radius: 10px;
 }
