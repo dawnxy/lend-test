@@ -73,30 +73,30 @@
   background: #fff;
 }
 .input_line {
-/*  display: -webkit-box;*/
+  display: -webkit-box;
   border-bottom: 1px solid #e7e7e7;
   color: #4d4d4d;
-  font-size: 16px;
-  padding: 20px 0 20px 20px;
+  font-size: 15px;
+  padding: 16px 19px 16px 0;
   margin: 0 .3rem;
 }
 .input_line label {
   width: 95px;
+  display: block;
 }
 .input_line input {
-  width:70%;
   font-family: "微软雅黑";
 }
 .input_line input,
 .input_line .showInput {
   -webkit-box-flex: 1;
-/*  display: block;*/
+  display: block;
   text-align: right;
   color: #4d4d4d;
 }
 .input_line .r_sp {
   display: block;
-  width: 32px;
+  width: 30px;
   text-align: right;
 }
 .calc_btn {
