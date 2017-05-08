@@ -86,8 +86,6 @@
 }
 .input_line input {
   font-family: "微软雅黑";
-  height:22px;
-  line-height: 22px;
 }
 .input_line input,
 .input_line .showInput {
