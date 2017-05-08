@@ -73,6 +73,9 @@
   background: #fff;
 }
 .input_line {
+  display:-webkit-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   border-bottom: 1px solid #e7e7e7;
   color: #4d4d4d;
   font-size: 15px;
@@ -83,7 +86,9 @@
   width: 95px;
 }
 .input_line input {
-  width:60%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  line-height: normal;
   font-family: "微软雅黑";
 }
 .input_line input,
