@@ -12,7 +12,7 @@ input[type=number]::-webkit-outer-spin-button {
 .input_line{ display: -webkit-box; vertical-align: middle; border-bottom:1px solid #e7e7e7; color: #4d4d4d; font-size:15px; margin:0 .3rem; height: 45px; line-height: 45px;}
 .input_line label{ width:95px; display: block;}
 .input_line input{ font-family:"微软雅黑";}
-.input_line input,.input_line .showInput{ -webkit-box-flex: 1; display: block; text-align: right; color: #4d4d4d; vertical-align: middle; line-height: 45px;}
+.input_line input,.input_line .showInput{ -webkit-box-flex: 1; display: block; text-align: right; color: #4d4d4d; vertical-align: middle; padding:14px 0; height: 17px; line-height: 17px;}
 .input_line .r_sp{ display: block; width:15px; text-align: right;}
 .calc_btn{ padding:20px 20px 0; text-align: center; vertical-align: middle;}
 .calc_btn input{ width:100%; height: 49px; color: #fff; font-size: 16px; background:#359df5; border-radius: 2px;}
