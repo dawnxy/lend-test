@@ -13,6 +13,7 @@ input[type=number]::-webkit-outer-spin-button {
 .input_line label{ width:95px; display: block;}
 .input_line input{ font-family:"微软雅黑";}
 .input_line input,.input_line .showInput{ -webkit-box-flex: 1; display: block; text-align: right; color: #4d4d4d; vertical-align: middle; padding:10px 0 12px; height: 23px;}
+.input_line .showInput{ padding:11px 0; line-height: 23px;}
 .input_line .r_sp{ display: block; width:15px; text-align: right;}
 .calc_btn{ padding:20px 20px 0; text-align: center; vertical-align: middle;}
 .calc_btn input{ width:100%; height: 49px; color: #fff; font-size: 16px; background:#359df5; border-radius: 2px;}
