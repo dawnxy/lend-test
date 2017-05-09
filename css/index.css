@@ -93,6 +93,7 @@
   vertical-align:middle;
   line-height: normal;
   font-family: "微软雅黑";
+  background:none;
 }
 .input_line input,
 .input_line .showInput {
