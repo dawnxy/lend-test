@@ -90,7 +90,6 @@
 .input_line input {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
-  line-height: normal;
   font-family: "微软雅黑";
   background:none;
 }
