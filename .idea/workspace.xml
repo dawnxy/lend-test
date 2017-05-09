@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbc3343f-d23c-452e-9ec0-7e7b8c3075c9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="11" column="274" lean-forward="false" selection-start-line="11" selection-start-column="274" selection-end-line="11" selection-end-column="274" />
+              <caret line="11" column="211" lean-forward="false" selection-start-line="11" selection-start-column="211" selection-end-line="11" selection-end-column="211" />
               <folding />
             </state>
           </provider>
@@ -265,7 +266,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57843000" />
+    <option name="totallyTimeSpent" value="57990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -519,7 +520,7 @@
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="11" column="274" lean-forward="false" selection-start-line="11" selection-start-column="274" selection-end-line="11" selection-end-column="274" />
+          <caret line="11" column="211" lean-forward="false" selection-start-line="11" selection-start-column="211" selection-end-line="11" selection-end-column="211" />
           <folding />
         </state>
       </provider>
