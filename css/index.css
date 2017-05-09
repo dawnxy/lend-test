@@ -9,7 +9,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 *{ margin:0; padding:0;}
 .loanForm{ background: #fff;}
-.input_line{ display: -webkit-box; display: -webkit-flex; -webkit-align-items: center; -webkit-box-align: center; vertical-align: middle; border-bottom:1px solid #e7e7e7; color: #4d4d4d; font-size:15px; padding:18px 0; margin:0 .3rem; line-height: 17px;}
+.input_line{ display: -webkit-box; display: -webkit-flex; -webkit-align-items: center; -webkit-box-align: center; vertical-align: middle; border-bottom:1px solid #e7e7e7; color: #4d4d4d; font-size:15px; padding:18px 0; margin:0 .3rem;height:17px; line-height: 17px;}
 .input_line label{ width:95px;}
 .input_line input{ font-family:"微软雅黑";}
 .input_line input,.input_line .showInput{ -webkit-box-flex: 1; -webkit-flex:1; text-align: right; color: #4d4d4d; padding:1px 0;}
