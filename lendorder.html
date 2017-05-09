@@ -7,7 +7,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style>
-        *{ margin:0;padding:0;}
         body{ position: relative; font-family:"微软雅黑";}
         input{ border:none; outline:none; font-size: 15px;}
         *{ -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color: transparent; /* For some Androids */ }
@@ -16,6 +15,14 @@
         :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color:#999;font-family:"微软雅黑";}
         ::-moz-placeholder { /* Mozilla Firefox 19+ */ color:#999;font-family:"微软雅黑";}
         :-ms-input-placeholder { /* Internet Explorer 10+ */color:#999;font-family:"微软雅黑";}
+        .topbar{background:#fff; color:#333; border-bottom:1px solid #9ed0fc;position: fixed; width: 100%;padding: 8px 0 10px 0; top:0; z-index:499}
+        .topbar img{ width:14px;}
+        .topbars a img {vertical-align: -1px;margin-right: 9px;}
+        .main{ padding:40px 0 41px;}
+        .displayBox p{ margin-left:12px;}
+        .topbar .textR img {width: 14px;}
+        .textR{position: absolute;right: 12px;}
+        .displayBox p{ width: inherit}
     </style>
     <script src="js/jquery.1.11.0.min.js"></script>
     <script src="js/lendindex.js"></script>
@@ -28,10 +35,11 @@
             <input type="tel" placeholder="最少50，最多5000" name="loanTotal" id="loanTotal" autocomplete="off"/>
             <span class="r_sp">万元</span>
         </div>
-        <div class="input_line">
-            <label><span>*</span>借款金额</label>
-            <input type="tel" placeholder="最少50，最多5000" name="loanTotal" id="loanTotal" autocomplete="off"/>
-            <span class="r_sp">万元</span>
+        <div class="input_line select_line">
+            <label><span>*</span>借款期限</label>
+            <input type="hidden" name="" id="loanTerm" value="">
+            <span class="showInput" data-name="Term"><span class="goodscolor">请选择借款期限</span></span>
+            <span class="r_sp arrow"></span>
         </div>
     </div>
 </form>
