@@ -7,12 +7,12 @@
 .input_line label{ width:95px; display: block; white-space: nowrap;}
 .input_line input{ font-family:"微软雅黑";}
 .input_line input,.input_line .showInput{ display: block; -webkit-box-flex: 1; text-align: right; color: #4d4d4d; height:18px; line-height: 18px;}
-.input_line .r_sp{  display: block; width:15px; text-align: right; height:17px; line-height: 17px;}
+.input_line .r_sp{  display: block; width:15px; text-align: right; height:18px; line-height: 17px;}
 .calc_btn{ padding:20px 20px 0; text-align: center; vertical-align: middle;}
 .calc_btn input{ width:100%; height: 49px; color: #fff; font-size: 16px; background:#359df5; border-radius: 2px;}
 .txt_info1{ padding:15px 25px; font-size: 12px; color: #d0d2d3; text-align:center;}
 .select_line{ padding-right:0;}
-.select_line .arrow{ width:19px; height:17px; background: url("../images/select_arrow.png") no-repeat right center; background-size: 8px 14px;}
+.select_line .arrow{ width:19px; height:18px; background: url("../images/select_arrow.png") no-repeat right center; background-size: 8px 14px;}
 
 /*房贷计算器弹窗*/
 .cover{ position: absolute; top:0; left: 0; width:100%; height: 100%; background: rgba(0,0,0,0.5);}
