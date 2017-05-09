@@ -28,20 +28,40 @@
     <script src="js/lendindex.js"></script>
 </head>
 <body class="bg_f3">
-<form class="lendorderForm">
+<form class="loanForm" action="${rc.getContextPath()}/calcRes.html" method="get" novalidate="novalidate">
     <div class="input_box">
-        <div class="input_line">
-            <label><span>*</span>借款月费率</label>
-            <input type="tel" placeholder="最少50，最多5000" name="loanTotal" id="loanTotal" autocomplete="off"/>
-            <span class="r_sp">万元</span>
+        <div class="input_line one_line">
+            <label>借款总额</label>
+            <input type="number" placeholder="最高可填入5000" name="loanTotal" id="loanTotal" autocomplete="off"/>
+            <span class="r_sp">万</span>
         </div>
         <div class="input_line select_line">
-            <label><span>*</span>借款期限</label>
-            <input type="hidden" name="" id="loanTerm" value="">
-            <span class="showInput" data-name="Term"><span class="goodscolor">请选择借款期限</span></span>
+            <label>借款期限</label>
+            <input type="hidden" name="loanDeadline" id="loanDeadline" value="12个月">
+            <span class="showInput" data-id="10012">12个月</span>
+            <span class="r_sp arrow"></span>
+        </div>
+        <div class="input_line">
+            <label>借款月费率</label>
+            <input type="number" placeholder="小于100的数字" name="loanMonthRate" id="loanMonthRate" autocomplete="off"/>
+            <span class="r_sp">%</span>
+        </div>
+        <div class="input_line">
+            <label>借款服务费率</label>
+            <input type="number" placeholder="小于100的数字" name="loanServeRate" id="loanServeRate" autocomplete="off"/>
+            <span class="r_sp">%</span>
+        </div>
+        <div class="input_line select_line">
+            <label>还款方式</label>
+            <input type="hidden" name="repayMethod" id="repayMethod" value="等额本息">
+            <span class="showInput" data-id="10001">等额本息</span>
             <span class="r_sp arrow"></span>
         </div>
     </div>
+    <div class="calc_btn">
+        <input type="submit" value="开始计算"/>
+    </div>
+    <div class="txt_info1">月费率及服务费率仅供计算使用，实际数值以订单为准</div>
 </form>
 </body>
 </body>
