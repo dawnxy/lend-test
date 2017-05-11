@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbc3343f-d23c-452e-9ec0-7e7b8c3075c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lendorder.html" afterPath="$PROJECT_DIR$/lendorder.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,9 +20,11 @@
       <file leaf-file-name="lendorder.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lendorder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="64" column="7" lean-forward="true" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="432">
+              <caret line="95" column="57" lean-forward="false" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -235,12 +236,12 @@
       <workItem from="1494133765630" duration="34090000" />
       <workItem from="1494229331818" duration="6830000" />
       <workItem from="1494298879808" duration="7641000" />
-      <workItem from="1494427551204" duration="465000" />
+      <workItem from="1494427551204" duration="5105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69686000" />
+    <option name="totallyTimeSpent" value="74326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -281,6 +282,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -305,7 +307,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="400" column="58" lean-forward="false" selection-start-line="400" selection-start-column="58" selection-end-line="400" selection-end-column="58" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -314,7 +318,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2950">
           <caret line="118" column="24" lean-forward="false" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -359,7 +365,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="27" column="108" lean-forward="true" selection-start-line="27" selection-start-column="108" selection-end-line="27" selection-end-column="108" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -367,7 +375,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="27" column="108" lean-forward="true" selection-start-line="27" selection-start-column="108" selection-end-line="27" selection-end-column="108" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -383,7 +393,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -405,7 +417,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="400" column="58" lean-forward="false" selection-start-line="400" selection-start-column="58" selection-end-line="400" selection-end-column="58" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -414,7 +428,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2950">
           <caret line="118" column="24" lean-forward="false" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -462,9 +478,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lendorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="64" column="7" lean-forward="true" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="432">
+          <caret line="95" column="57" lean-forward="false" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

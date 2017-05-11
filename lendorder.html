@@ -32,7 +32,7 @@
     <div class="input_box">
         <div class="input_line one_line">
             <label>借款总额</label>
-            <input type="number" placeholder="最高可填入万0" name="loanTotal" id="loanTotal" autocomplete="off"/>
+            <input type="number" placeholder="最高可填入万0" name="loanTotal" id="loanTotal" autocomplete="off" style="ime-mode:Disabled"/>
             <span class="r_sp">万</span>
         </div>
         <div class="input_line select_line">
@@ -43,7 +43,7 @@
         </div>
         <div class="input_line">
             <label>借款月费率</label>
-            <input type="number" placeholder="小于100的数字" name="loanMonthRate" id="loanMonthRate" autocomplete="off"/>
+            <input type="number" placeholder="小于100的数字" name="loanMonthRate" id="loanMonthRate" autocomplete="off" step="1"/>
             <span class="r_sp">%</span>
         </div>
         <div class="input_line">
@@ -63,6 +63,37 @@
     </div>
     <div class="txt_info1">月费率及服务费率仅供计算使用，实际数值以订单为准</div>
 </form>
-</body>
+<script>
+    var count=0;//小数点的个数
+    $("#loanTotal").bind("keypress",function (e) {
+        if(String.fromCharCode(e.keyCode)==="."){
+            count++;
+        }
+        if(/[\d.]/.test(String.fromCharCode(e.keyCode))){//输入的是数字或小数点
+            if(this.value===""){//清空内容后，重新判断
+                count=0;
+            }
+            if(count>1){//超过一个小数点后，禁止输入
+                count=1;
+                return false;
+            }else{
+                return true;
+            }
+        }else{//输入的不是数字或小数点
+            return false;
+        }
+    });
+    //number类型把非数字都转换为空，
+    //输入汉字后焦点丢失，再次得到焦点后，光标跑到最前面输入汉字只有keyup能监听到
+    $("#loanTotal").bind("keyup",function(e){
+        if(/[\\u4E00-\\u9FFF]/.test(String.fromCharCode(e.keyCode))){
+            console.log("不能输入汉字！");
+            this.value = "";
+            this.focus();
+            return false;
+        }
+    })
+    //http://www.cnblogs.com/Mcy1358781719/p/5728451.html
+</script>
 </body>
 </html>
